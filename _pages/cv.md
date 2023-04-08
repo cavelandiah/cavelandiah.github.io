@@ -11,9 +11,9 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* B.Sc. Biology, Universidad Nacional de Colombia, Colombia, 2013
+* M.Sc. in Bioinformatics, Universidad Nacional de Colombia, Colombia, 2015
+* Ph.D in Computer Science, Leipzig University, Germany, 2022
 
 Work experience
 ======
