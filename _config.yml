@@ -7,9 +7,9 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Behind the regulation landscape"
+title                    : "Decoding the RNA regulation language"
 title_separator          : "-"
-name                     : &name "Cristian A. Velandia-Huerto, PhD"
+name                     : &name "Cristian A. Velandia Huerto, PhD"
 description              : &description "Looking further walls"
 url                      : https://cavelandiah.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -80,14 +80,14 @@ analytics:
 
 # Site Author
 author:
-  name             : "Cristian A. Velandia-Huerto"
+  name             : "Cristian A. Velandia Huerto"
   avatar           : "profile.png"
   bio              : "Postdoc at the Theoretical Biochemistry Group studying regulatory ncRNAs"
   location         : "Vienna, Austria"
   employer         :
   pubmed           : "https://pubmed.ncbi.nlm.nih.gov/?term=Velandia-Huerto%2C+CA%5BAuthor%5D"
   googlescholar    : "https://scholar.google.com/citations?user=oA6y0BsAAAAJ&hl=en"
-  email            :
+  email            : "cavelandiah@tbi.univie.ac.at"
   researchgate     :  "https://www.researchgate.net/profile/Cristian-Velandia-Huerto" # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
