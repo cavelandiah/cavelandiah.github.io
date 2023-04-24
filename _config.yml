@@ -14,7 +14,7 @@ description              : &description "Looking further walls"
 url                      : https://cavelandiah.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "cavelandiah/cavelandiah.github.io"
-teaser                   : "test.png" # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
+teaser                   : "profile.png" # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 future                   : true
@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Cristian A. Velandia Huerto"
-  avatar           : "test.png"
+  avatar           : "profile.png"
   bio              : "Postdoc at the Theoretical Biochemistry Group studying regulatory ncRNAs"
   location         : "Vienna, Austria"
   employer         :
