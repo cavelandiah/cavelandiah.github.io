@@ -1,6 +1,6 @@
 ---
 title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+excerpt: "An evidence-aware workflow for RNA annotation.<br/><img src='/images/rna-evidence-network.svg' alt='RNA sequence and structure evidence converging on a validated annotation'>"
 collection: portfolio
 ---
 
