@@ -8,6 +8,7 @@
 
 @media print {
   .masthead,
+  .science-hero__art,
   .toc,
   .page__share,
   .page__related,
@@ -15,4 +16,10 @@
   .page__footer {
     display: none;
   }
+
+  body { padding: 0; color: #000; background: #fff; font-size: 10.5pt; line-height: 1.35; }
+  #main, .page, .archive { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
+  .science-hero, .archive__item, .research-card { break-inside: avoid; box-shadow: none; background: #fff; border-color: #777; }
+  a { color: #000; text-decoration: none; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8pt; overflow-wrap: anywhere; }
 }

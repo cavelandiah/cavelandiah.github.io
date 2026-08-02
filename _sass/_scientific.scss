@@ -1,0 +1,47 @@
+/* Scientific identity components: hero, research cards, figures, and a11y. */
+.science-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(16rem, 0.9fr);
+  gap: $space-lg;
+  align-items: center;
+  margin: 0 0 $space-lg;
+  padding: $space-lg;
+  overflow: hidden;
+  background: linear-gradient(135deg, $surface, $paper 70%);
+  border: 1px solid $border-color;
+  border-radius: $border-radius-large;
+
+  &__eyebrow { color: $pair-a; font-family: $sans-serif; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+  &__title { max-width: 15ch; margin: .25em 0; font-size: clamp(2rem, 5vw, 3.75rem); letter-spacing: -.035em; }
+  &__lede { max-width: 57ch; color: $ink-muted; font-size: 1.1rem; }
+  &__art { width: 100%; height: auto; }
+  &__backbone { fill: none; stroke: $ink-muted; stroke-width: 2; }
+  &__pair { fill: none; stroke: $pair-b; stroke-width: 2; opacity: .65; }
+  &__trajectory { fill: none; stroke: $accent; stroke-width: 2.5; stroke-dasharray: 5 6; animation: trace 8s linear infinite; }
+  &__node { fill: $paper; stroke: $pair-a; stroke-width: 3; }
+}
+
+@keyframes trace { to { stroke-dashoffset: -88; } }
+
+.research-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: $space-md; margin: $space-lg 0; }
+.research-card { padding: $space-md; background: $surface; border-top: 3px solid $pair-a; border-radius: $border-radius; }
+.research-card:nth-child(2) { border-top-color: $pair-b; }
+.research-card:nth-child(3) { border-top-color: $accent; }
+.research-card h2 { margin-top: 0; }
+
+.scientific-figure { padding: $space-sm; background: $surface; border: 1px solid $border-color; border-radius: $border-radius-large; }
+.scientific-figure figcaption { padding: 0 $space-sm $space-sm; color: $ink-muted; font-size: .875rem; line-height: 1.5; }
+
+.math, mjx-container { font-family: $math-font; }
+
+:focus-visible { outline: 3px solid $accent; outline-offset: 3px; box-shadow: $focus-ring; }
+
+@media (max-width: $medium) {
+  .science-hero { grid-template-columns: 1fr; padding: $space-md; }
+  .science-hero__art { max-height: 17rem; }
+  .research-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
