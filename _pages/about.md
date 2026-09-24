@@ -50,3 +50,36 @@ My doctoral work expanded into computational detection of ncRNAs, especially in 
   <img src="/images/rna-evidence-network.svg" alt="Diagram linking RNA sequence, a hairpin structure, evolutionary evidence, and a validated annotation node.">
   <figcaption>Evidence integration in an RNA annotation workflow: sequence and secondary structure are evaluated in an evolutionary context before a candidate enters the curated annotation set.</figcaption>
 </figure>
+
+## Selected work
+
+- [**Orthologs, turn-over, and remolding of tRNAs in primates and fruit flies**](/publication/2016-08-16-tRNA-turnover-number-1) — traced the concerted evolution of transfer RNAs across primate and fruit-fly genomes.
+- [**Automated detection of ncRNAs in the draft genome of *Didemnum vexillum***](/publication/2016-08-30-draft-didemnum-vexillum-number-2) — contributed a comprehensive non-coding RNA annotation to the first draft genome assembly of this colonial tunicate.
+- [**Nonprotein-Coding RNAs as Regulators of Development in Tunicates**](/publication/2018-08-07-regulator-tunicates-ncrnas-paper-3) — synthesized evidence for how non-coding RNAs regulate tunicate development and evolution.
+
+[Browse all publications](/publications/)
+
+<!-- Current-project details needed: supply the project title, research question, status or timeframe, and a public project page for each project that may be named here. -->
+<!-- Current-affiliation details needed: confirm the institution, group, position title, and dates that should appear on this page. -->
+<!-- Funding details needed: supply the funder, grant or consortium name, grant number, funding period, and a public award page for any current support that may be acknowledged here. -->
+<!-- Software-link details needed: supply the canonical repository and documentation or release URL for miRNAture and any other maintained research software. -->
+
+## Current questions
+
+- How do RNA chemical modifications reshape molecular structure and function?
+- Which combinations of sequence, structure, and evolutionary evidence make ncRNA annotation dependable across divergent genomes?
+- How do microRNA families emerge, change, and disappear across chordate evolution?
+
+## Work with me
+
+- **Academic research:** [Discuss a research collaboration](mailto:{{ site.author.email }})
+- **Industry collaboration:** [Explore capabilities and ways to engage](/industry/)
+
+<!-- Collaboration-preference details needed: state the academic questions, methods, organisms, project stages, and mentoring or co-supervision opportunities currently sought. -->
+<!-- Collaboration-preference details needed: state current industry availability, preferred engagement types and sectors, timing constraints, and any data, publication, confidentiality, or intellectual-property requirements. -->
+
+<aside class="contact-callout" aria-labelledby="about-contact-title">
+  <h2 id="about-contact-title">Start a conversation</h2>
+  <p>Have a research question or collaboration in mind?</p>
+  <a class="btn btn--primary" href="mailto:{{ site.author.email }}">Email {{ site.author.email }}</a>
+</aside>
