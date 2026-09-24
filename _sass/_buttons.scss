@@ -9,9 +9,9 @@
 .btn {
   /* default button */
   display: inline-block;
-  margin-bottom: 0.25em;
-  padding: 0.5em 1em;
-  color: #fff !important;
+  margin-bottom: $space-2xs;
+  padding: $space-sm $space-md;
+  color: $surface-elevated !important;
   font-family: $sans-serif;
   font-size: $type-size-6;
   font-weight: bold;
@@ -19,16 +19,22 @@
   text-decoration: none;
   background-color: $accent;
   border: 2px solid $accent !important;
-  border-radius: $border-radius;
+  border-radius: $radius-small;
   cursor: pointer;
+  transition: background-color $transition-standard, border-color $transition-standard, box-shadow $transition-standard, text-decoration-color $transition-standard;
 
   &:hover {
     background-color: mix(#000, $accent, 18%);
     border-color: mix(#000, $accent, 18%) !important;
+    text-decoration: underline;
+    text-underline-offset: $space-2xs;
   }
 
+  &:focus-visible { outline: 3px solid $accent; outline-offset: $space-2xs; box-shadow: $focus-treatment; }
+  &:active { box-shadow: inset 0 0 0 2px rgba($ink, .28); text-decoration-thickness: 2px; }
+
   .icon {
-    margin-right: 0.5em;
+    margin-right: $space-sm;
   }
 
   .icon + .hidden {
@@ -42,7 +48,7 @@
     width: 100%;
 
     + .btn--block {
-      margin-top: 0.25em;
+      margin-top: $space-2xs;
     }
   }
 
@@ -51,10 +57,10 @@
   &--inverse {
     color: $gray !important;
     border: 1px solid $light-gray !important; /* override*/
-    background-color: #fff;
+    background-color: $surface-elevated;
 
     &:hover {
-      color: #fff !important;
+      color: $surface-elevated !important;
       border-color: $gray;
     }
   }
@@ -62,7 +68,7 @@
   /* light outline */
 
   &--light-outline {
-    border: 1px solid #fff !important; /* override*/
+    border: 1px solid $surface-elevated !important; /* override*/
     background-color: transparent;
   }
 
