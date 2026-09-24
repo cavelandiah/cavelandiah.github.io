@@ -14,7 +14,7 @@ redirect_from:
     <p class="science-hero__eyebrow">Computational RNA biology</p>
     <h1 class="science-hero__title" id="hero-title">Decoding RNA’s regulatory language</h1>
     <p class="science-hero__lede">I build algorithms that connect sequence, structure, and evolution—making non-coding RNA annotation more reliable across the tree of life.</p>
-    <a class="btn" href="/publications/">Explore the research</a>
+    <a class="btn" href="{{ '/publications/' | relative_url }}">Explore the research</a>
   </div>
   <svg class="science-hero__art" viewBox="0 0 480 360" role="img" aria-labelledby="rna-title rna-desc">
     <title id="rna-title">RNA structure becoming a computational graph</title>
@@ -47,17 +47,17 @@ I completed an MSc in Bioinformatics with Dra. Clara Bermúdez (Universidad Naci
 My doctoral work expanded into computational detection of ncRNAs, especially in tunicates, and into probabilistic predictive models. I created **miRNAture**, a pipeline that evaluates bona fide miRNA annotations by combining homology with structural features. The aim is not simply to produce more predictions, but to make every prediction explainable, comparable, and reusable.
 
 <figure class="scientific-figure">
-  <img src="/images/rna-evidence-network.svg" alt="Diagram linking RNA sequence, a hairpin structure, evolutionary evidence, and a validated annotation node.">
+  <img src="{{ '/images/rna-evidence-network.svg' | relative_url }}" alt="Diagram linking RNA sequence, a hairpin structure, evolutionary evidence, and a validated annotation node.">
   <figcaption>Evidence integration in an RNA annotation workflow: sequence and secondary structure are evaluated in an evolutionary context before a candidate enters the curated annotation set.</figcaption>
 </figure>
 
 ## Selected work
 
-- [**Orthologs, turn-over, and remolding of tRNAs in primates and fruit flies**](/publication/2016-08-16-tRNA-turnover-number-1) — traced the concerted evolution of transfer RNAs across primate and fruit-fly genomes.
-- [**Automated detection of ncRNAs in the draft genome of *Didemnum vexillum***](/publication/2016-08-30-draft-didemnum-vexillum-number-2) — contributed a comprehensive non-coding RNA annotation to the first draft genome assembly of this colonial tunicate.
-- [**Nonprotein-Coding RNAs as Regulators of Development in Tunicates**](/publication/2018-08-07-regulator-tunicates-ncrnas-paper-3) — synthesized evidence for how non-coding RNAs regulate tunicate development and evolution.
+- [**Orthologs, turn-over, and remolding of tRNAs in primates and fruit flies**]({{ '/publication/2016-08-16-tRNA-turnover-number-1' | relative_url }}) — traced the concerted evolution of transfer RNAs across primate and fruit-fly genomes.
+- [**Automated detection of ncRNAs in the draft genome of *Didemnum vexillum***]({{ '/publication/2016-08-30-draft-didemnum-vexillum-number-2' | relative_url }}) — contributed a comprehensive non-coding RNA annotation to the first draft genome assembly of this colonial tunicate.
+- [**Nonprotein-Coding RNAs as Regulators of Development in Tunicates**]({{ '/publication/2018-08-07-regulator-tunicates-ncrnas-paper-3' | relative_url }}) — synthesized evidence for how non-coding RNAs regulate tunicate development and evolution.
 
-[Browse all publications](/publications/)
+[Browse all publications]({{ '/publications/' | relative_url }})
 
 <!-- Current-project details needed: supply the project title, research question, status or timeframe, and a public project page for each project that may be named here. -->
 <!-- Current-affiliation details needed: confirm the institution, group, position title, and dates that should appear on this page. -->
@@ -73,7 +73,7 @@ My doctoral work expanded into computational detection of ncRNAs, especially in 
 ## Work with me
 
 - **Academic research:** [Discuss a research collaboration](mailto:{{ site.author.email }})
-- **Industry collaboration:** [Explore capabilities and ways to engage](/industry/)
+- **Industry collaboration:** [Explore capabilities and ways to engage]({{ '/industry/' | relative_url }})
 
 <!-- Collaboration-preference details needed: state the academic questions, methods, organisms, project stages, and mentoring or co-supervision opportunities currently sought. -->
 <!-- Collaboration-preference details needed: state current industry availability, preferred engagement types and sectors, timing constraints, and any data, publication, confidentiality, or intellectual-property requirements. -->
