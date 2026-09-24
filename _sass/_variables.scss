@@ -48,27 +48,28 @@ $header-font-family         : $sans-serif;
 $caption-font-family        : $sans-serif;
 
 /* semantic typography */
-$type-display-size          : clamp(2.25rem, 1.65rem + 3vw, 4.75rem);
+/* unquote keeps legacy Jekyll Sass from evaluating mixed rem/vw arithmetic */
+$type-display-size          : unquote("clamp(2.25rem, 1.65rem + 3vw, 4.75rem)");
 $type-display-line-height   : 1;
 $type-display-tracking      : -0.045em;
 $type-display-weight        : 700;
 
-$type-title-size            : clamp(1.5rem, 1.25rem + 1.25vw, 2.5rem);
+$type-title-size            : unquote("clamp(1.5rem, 1.25rem + 1.25vw, 2.5rem)");
 $type-title-line-height     : 1.12;
 $type-title-tracking        : -0.025em;
 $type-title-weight          : 700;
 
-$type-body-size             : clamp(1rem, 0.975rem + 0.125vw, 1.0625rem);
+$type-body-size             : unquote("clamp(1rem, 0.975rem + 0.125vw, 1.0625rem)");
 $type-body-line-height      : 1.65;
 $type-body-tracking         : 0;
 $type-body-measure          : 65ch;
 
-$type-caption-size          : clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+$type-caption-size          : unquote("clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem)");
 $type-caption-line-height   : 1.45;
 $type-caption-tracking      : 0.01em;
 $type-caption-weight        : 400;
 
-$type-label-size            : clamp(0.75rem, 0.725rem + 0.125vw, 0.8125rem);
+$type-label-size            : unquote("clamp(0.75rem, 0.725rem + 0.125vw, 0.8125rem)");
 $type-label-line-height     : 1.25;
 $type-label-tracking        : 0.075em;
 $type-label-weight          : 700;
