@@ -9,46 +9,46 @@ redirect_from:
   - /about.html
 ---
 
-<!--<section class="science-hero" aria-labelledby="hero-title">-->
-  <!--<div class="science-hero__copy">-->
-    <!--<p class="science-hero__eyebrow">Computational RNA biology</p>-->
-    <!--<h1 class="science-hero__title" id="hero-title">Finding the signals that make RNA regulatory</h1>-->
-    <!--<p class="science-hero__lede">I combine sequence, structure, and evolution to distinguish functional non-coding RNAs from genomic noise—and turn biological evidence into reproducible models.</p>-->
-    <!--<div class="science-hero__actions">-->
-      <!--<a class="science-hero__action science-hero__action--primary" href="{{ '/publications/' | relative_url }}">Explore my research</a>-->
-      <!--<a class="science-hero__action science-hero__action--secondary" href="{{ '/industry/' | relative_url }}">Industry collaborations</a>-->
-    <!--</div>-->
-  <!--</div>-->
-  <!--<svg class="science-hero__art" viewBox="0 0 640 390" role="img" aria-labelledby="about-rna-evidence-title about-rna-evidence-desc">-->
-    <!--<title id="about-rna-evidence-title">Evolutionary evidence resolves a regulatory RNA signal</title>-->
-    <!--<desc id="about-rna-evidence-desc">One RNA strand forms a hairpin, passes through a sparse field of conserved sequence evidence, and ends in a short highlighted region representing an evidence-supported regulatory annotation.</desc>-->
-    <!--<defs aria-hidden="true">-->
-      <!--<linearGradient id="about-rna-field-gradient" x1="0" y1="0" x2="1" y2="1" aria-hidden="true">-->
-        <!--<stop offset="0" stop-color="currentColor" stop-opacity="0"/>-->
-        <!--<stop offset=".52" stop-color="currentColor" stop-opacity=".12"/>-->
-        <!--<stop offset="1" stop-color="currentColor" stop-opacity="0"/>-->
-      <!--</linearGradient>-->
-      <!--<radialGradient id="about-rna-signal-gradient" aria-hidden="true">-->
-        <!--<stop offset="0" stop-color="currentColor" stop-opacity=".2"/>-->
-        <!--<stop offset="1" stop-color="currentColor" stop-opacity="0"/>-->
-      <!--</radialGradient>-->
-    <!--</defs>-->
-    <!--<g class="science-hero__peripheral" aria-hidden="true">-->
-      <!--<ellipse class="science-hero__field" cx="355" cy="225" rx="150" ry="120" fill="url(#about-rna-field-gradient)"/>-->
-      <!--<path class="science-hero__pair" d="M105 247 Q134 221 163 240 M103 266 Q133 244 166 258 M108 286 Q135 267 160 277"/>-->
-      <!--<g class="science-hero__alignment">-->
-        <!--<path d="M275 152h34 M328 152h18 M379 152h45 M252 182h20 M293 182h47 M366 182h25 M416 182h22 M267 213h50 M345 213h22 M392 213h35 M282 244h25 M329 244h42 M400 244h29 M258 275h38 M321 275h19 M367 275h53"/>-->
-        <!--<circle cx="310" cy="120" r="3"/><circle cx="359" cy="137" r="2"/><circle cx="410" cy="116" r="3"/><circle cx="244" cy="235" r="2"/><circle cx="442" cy="259" r="2.5"/><circle cx="385" cy="297" r="3"/>-->
-      <!--</g>-->
-      <!--<circle class="science-hero__signal-halo" cx="584" cy="199" r="48" fill="url(#about-rna-signal-gradient)"/>-->
-    <!--</g>-->
-    <!--<path class="science-hero__strand" d="M36 302 C76 291 80 235 111 223 C147 209 180 241 168 276 C157 309 108 308 102 272 C95 233 139 194 191 205 C239 216 244 272 286 263 C338 252 354 198 405 210 C455 222 468 260 508 244 C548 228 555 187 610 195"/>-->
-    <!--<path class="science-hero__mature" d="M548 228 C564 214 579 191 610 195"/>-->
-    <!--<g class="science-hero__evidence-dots" aria-hidden="true">-->
-      <!--<circle cx="286" cy="263" r="4"/><circle cx="354" cy="218" r="4"/><circle cx="405" cy="210" r="4"/><circle cx="469" cy="253" r="4"/>-->
-    <!--</g>-->
-  <!--</svg>-->
-<!--</section>-->
+<section class="science-hero" aria-labelledby="hero-title">
+  <div class="science-hero__copy">
+    <p class="science-hero__eyebrow">Computational RNA biology</p>
+    <h1 class="science-hero__title" id="hero-title">Finding the signals that make RNA regulatory</h1>
+    <p class="science-hero__lede">I combine sequence, structure, and evolution to distinguish functional non-coding RNAs from genomic noise through reproducible models.</p>
+    <div class="science-hero__actions">
+      <a class="science-hero__action science-hero__action--primary" href="{{ '/publications/' | relative_url }}">Explore my research</a>
+      <a class="science-hero__action science-hero__action--secondary" href="{{ '/industry/' | relative_url }}">Industry collaborations</a>
+    </div>
+  </div>
+  <svg class="science-hero__art" viewBox="0 0 640 390" role="img" aria-labelledby="about-rna-evidence-title about-rna-evidence-desc">
+    <title id="about-rna-evidence-title">Evolutionary evidence resolves a regulatory RNA signal</title>
+    <desc id="about-rna-evidence-desc">One RNA strand forms a hairpin, passes through a sparse field of conserved sequence evidence, and ends in a short highlighted region representing an evidence-supported regulatory annotation.</desc>
+    <defs aria-hidden="true">
+      <linearGradient id="about-rna-field-gradient" x1="0" y1="0" x2="1" y2="1" aria-hidden="true">
+        <stop offset="0" stop-color="currentColor" stop-opacity="0"/>
+        <stop offset=".52" stop-color="currentColor" stop-opacity=".12"/>
+        <stop offset="1" stop-color="currentColor" stop-opacity="0"/>
+      </linearGradient>
+      <radialGradient id="about-rna-signal-gradient" aria-hidden="true">
+        <stop offset="0" stop-color="currentColor" stop-opacity=".2"/>
+        <stop offset="1" stop-color="currentColor" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <g class="science-hero__peripheral" aria-hidden="true">
+      <ellipse class="science-hero__field" cx="355" cy="225" rx="150" ry="120" fill="url(#about-rna-field-gradient)"/>
+      <path class="science-hero__pair" d="M105 247 Q134 221 163 240 M103 266 Q133 244 166 258 M108 286 Q135 267 160 277"/>
+      <g class="science-hero__alignment">
+        <path d="M275 152h34 M328 152h18 M379 152h45 M252 182h20 M293 182h47 M366 182h25 M416 182h22 M267 213h50 M345 213h22 M392 213h35 M282 244h25 M329 244h42 M400 244h29 M258 275h38 M321 275h19 M367 275h53"/>
+        <circle cx="310" cy="120" r="3"/><circle cx="359" cy="137" r="2"/><circle cx="410" cy="116" r="3"/><circle cx="244" cy="235" r="2"/><circle cx="442" cy="259" r="2.5"/><circle cx="385" cy="297" r="3"/>
+      </g>
+      <circle class="science-hero__signal-halo" cx="584" cy="199" r="48" fill="url(#about-rna-signal-gradient)"/>
+    </g>
+    <path class="science-hero__strand" d="M36 302 C76 291 80 235 111 223 C147 209 180 241 168 276 C157 309 108 308 102 272 C95 233 139 194 191 205 C239 216 244 272 286 263 C338 252 354 198 405 210 C455 222 468 260 508 244 C548 228 555 187 610 195"/>
+    <path class="science-hero__mature" d="M548 228 C564 214 579 191 610 195"/>
+    <g class="science-hero__evidence-dots" aria-hidden="true">
+      <circle cx="286" cy="263" r="4"/><circle cx="354" cy="218" r="4"/><circle cx="405" cy="210" r="4"/><circle cx="469" cy="253" r="4"/>
+    </g>
+  </svg>
+</section>
 
 ## From genomes to testable models
 
