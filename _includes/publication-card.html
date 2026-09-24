@@ -1,0 +1,8 @@
+<article class="publication-card" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  <p class="publication-card__type">{{ post.type }}</p>
+  <h3 itemprop="headline">
+    {% if post.paperurl %}<a href="{{ post.paperurl }}">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}
+  </h3>
+  <p class="publication-card__authors" itemprop="author">{{ post.authors }}</p>
+  <p class="publication-card__venue"><em>{{ post.venue }}</em>{% if post.doi %}<span aria-hidden="true"> · </span><a href="{{ post.paperurl }}">DOI: {{ post.doi }}</a>{% endif %}</p>
+</article>
