@@ -1,0 +1,4 @@
+<li>
+  <strong>{% if post.paperurl %}<a href="{{ post.paperurl }}">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}</strong><br>
+  <span>{{ post.authors }}. <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}.</span>
+</li>

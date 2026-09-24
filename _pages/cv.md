@@ -17,6 +17,10 @@ redirect_from:
   <a href="#skills">Skills</a>
   <a href="#teaching">Teaching</a>
   <a href="#presentations">Presentations</a>
+<<<<<<< HEAD
+  <a href="#publications">Publications</a>
+=======
+>>>>>>> updates
   <a href="#awards">Awards</a>
 </nav>
 
