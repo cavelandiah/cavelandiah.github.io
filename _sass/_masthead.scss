@@ -14,8 +14,8 @@
 
   &__inner-wrap {
     @include container;
-    @include clearfix;
-    padding: 1em 1em 1em;
+    height: 4.5rem;
+    padding: 0 1rem;
     font-family: $sans-serif-narrow;
 
     @include breakpoint($x-large) {
@@ -33,6 +33,11 @@
 }
 
 .masthead__menu {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+  height: 100%;
+
 
   ul {
     margin: 0;
@@ -42,13 +47,29 @@
   }
 }
 
+.masthead__identity {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  color: $masthead-link-color;
+  font-size: 1.0625rem;
+  font-weight: 650;
+  letter-spacing: .015em;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &:hover { color: $masthead-link-color-hover; }
+
+  &:focus-visible {
+    outline: 3px solid $accent;
+    outline-offset: $space-2xs;
+  }
+}
+
 .masthead__menu-item {
   display: block;
   list-style-type: none;
   white-space: nowrap;
 
-  &--lg {
-    padding-right: 2em;
-    font-weight: 700;
-  }
 }
