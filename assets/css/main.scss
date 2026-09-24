@@ -10,6 +10,15 @@
  *
 */
 
+/*
+ * Font-loading policy
+ * -------------------
+ * The site uses the platform-specific stacks in _variables.scss and makes no
+ * third-party requests. If licensing permits a future local family, put only
+ * the used WOFF2 files in /assets/fonts and declare each explicit weight here
+ * with `font-display: swap`; the system stacks remain resilient fallbacks.
+ */
+
 @import "vendor/breakpoint/breakpoint"; // media query mixins
 @import "variables";
 @import "mixins";
@@ -41,3 +50,45 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+/* Reusable semantic type roles. Components may opt into a role without
+   reproducing size, rhythm, and tracking decisions. */
+.type-display {
+  font-family: $header-font-family;
+  font-size: $type-display-size;
+  font-weight: $type-display-weight;
+  line-height: $type-display-line-height;
+  letter-spacing: $type-display-tracking;
+}
+
+.type-title {
+  font-family: $header-font-family;
+  font-size: $type-title-size;
+  font-weight: $type-title-weight;
+  line-height: $type-title-line-height;
+  letter-spacing: $type-title-tracking;
+}
+
+.type-body {
+  max-width: $type-body-measure;
+  font-family: $global-font-family;
+  font-size: $type-body-size;
+  line-height: $type-body-line-height;
+  letter-spacing: $type-body-tracking;
+}
+
+.type-caption {
+  font-family: $caption-font-family;
+  font-size: $type-caption-size;
+  font-weight: $type-caption-weight;
+  line-height: $type-caption-line-height;
+  letter-spacing: $type-caption-tracking;
+}
+
+.type-label {
+  font-family: $header-font-family;
+  font-size: $type-label-size;
+  font-weight: $type-label-weight;
+  line-height: $type-label-line-height;
+  letter-spacing: $type-label-tracking;
+}

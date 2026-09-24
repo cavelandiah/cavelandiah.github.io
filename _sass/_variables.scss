@@ -18,11 +18,19 @@ $doc-font-size              : 16;
 $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
-/* system typefaces */
-$serif                      : "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-$sans-serif                 : Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-$monospace                  : "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-$math-font                  : "STIX Two Math", "Cambria Math", $serif;
+/*
+   Privacy-first system typefaces
+
+   Each stack intentionally covers macOS/iOS, Windows, Android, and Linux.
+   There are no remote font requests, so these are also the font-blocking
+   fallback stacks. If self-hosted fonts are added later, keep WOFF2 files in
+   assets/fonts, declare only used styles in main.scss, and preserve these
+   stacks after the family name.
+*/
+$serif                      : "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Noto Serif", "Droid Serif", Georgia, serif;
+$sans-serif                 : "Avenir Next", "Segoe UI Variable", "Segoe UI", Roboto, Ubuntu, "Noto Sans", Arial, sans-serif;
+$monospace                  : ui-monospace, "SFMono-Regular", "Cascadia Code", "Roboto Mono", "Ubuntu Mono", "Noto Sans Mono", Consolas, "Liberation Mono", monospace;
+$math-font                  : "STIX Two Math", "Cambria Math", "Latin Modern Math", "Noto Serif Math", $serif;
 
 /* sans serif typefaces */
 $sans-serif-narrow          : $sans-serif;
@@ -38,6 +46,32 @@ $garamond                   : Garamond, serif;
 $global-font-family         : $serif;
 $header-font-family         : $sans-serif;
 $caption-font-family        : $sans-serif;
+
+/* semantic typography */
+$type-display-size          : clamp(2.25rem, 1.65rem + 3vw, 4.75rem);
+$type-display-line-height   : 1;
+$type-display-tracking      : -0.045em;
+$type-display-weight        : 700;
+
+$type-title-size            : clamp(1.5rem, 1.25rem + 1.25vw, 2.5rem);
+$type-title-line-height     : 1.12;
+$type-title-tracking        : -0.025em;
+$type-title-weight          : 700;
+
+$type-body-size             : clamp(1rem, 0.975rem + 0.125vw, 1.0625rem);
+$type-body-line-height      : 1.65;
+$type-body-tracking         : 0;
+$type-body-measure          : 65ch;
+
+$type-caption-size          : clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+$type-caption-line-height   : 1.45;
+$type-caption-tracking      : 0.01em;
+$type-caption-weight        : 400;
+
+$type-label-size            : clamp(0.75rem, 0.725rem + 0.125vw, 0.8125rem);
+$type-label-line-height     : 1.25;
+$type-label-tracking        : 0.075em;
+$type-label-weight          : 700;
 
 /* type scale */
 $type-size-1                : 2.441em;  // ~39.056px
