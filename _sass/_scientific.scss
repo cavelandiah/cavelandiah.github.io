@@ -29,6 +29,52 @@
 .research-card:nth-child(3) { border-top-color: $accent; }
 .research-card h2 { margin-top: 0; }
 
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $space-md;
+  margin: $space-lg 0;
+}
+
+.capability-card {
+  padding: $space-md;
+  background: $surface;
+  border: 1px solid $border-color;
+  border-top: 3px solid $pair-a;
+  border-radius: $border-radius;
+
+  h3 { margin-top: 0; }
+  p:last-child { margin-bottom: 0; }
+}
+
+.engagement-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: $space-md;
+  margin: $space-lg 0;
+  padding: 0;
+  counter-reset: engagement-step;
+  list-style: none;
+
+  li { position: relative; padding: $space-md; background: $surface; border-radius: $border-radius; counter-increment: engagement-step; }
+  li::before { display: block; margin-bottom: $space-sm; color: $pair-b; font-family: $sans-serif; font-size: 1.5rem; font-weight: 700; content: counter(engagement-step, decimal-leading-zero); }
+  strong, span { display: block; }
+  strong { margin-bottom: $space-xs; font-family: $sans-serif; }
+  span { color: $ink-muted; }
+}
+
+.contact-callout {
+  margin: $space-lg 0;
+  padding: $space-lg;
+  background: linear-gradient(135deg, $surface, $paper);
+  border: 1px solid $border-color;
+  border-left: 4px solid $accent;
+  border-radius: $border-radius-large;
+
+  h2 { margin-top: 0; }
+  p { max-width: 60ch; }
+}
+
 .scientific-figure { padding: $space-sm; background: $surface; border: 1px solid $border-color; border-radius: $border-radius-large; }
 .scientific-figure figcaption { padding: 0 $space-sm $space-sm; color: $ink-muted; font-size: .875rem; line-height: 1.5; }
 
@@ -40,6 +86,8 @@
   .science-hero { grid-template-columns: 1fr; padding: $space-md; }
   .science-hero__art { max-height: 17rem; }
   .research-grid { grid-template-columns: 1fr; }
+  .capability-grid, .engagement-steps { grid-template-columns: 1fr; }
+  .contact-callout { padding: $space-md; }
 }
 
 @media (prefers-reduced-motion: reduce) {
