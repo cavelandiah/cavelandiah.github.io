@@ -11,8 +11,8 @@
   @include clearfix;
   margin-top: 0;
   margin-bottom: 0;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: $space-lg;
+  padding-right: $space-lg;
   font-family: $sans-serif;
   -webkit-animation: intro 0.3s both;
           animation: intro 0.3s both;
@@ -20,8 +20,8 @@
           animation-delay: 0.30s;
 
   @include breakpoint($large) {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: $space-md;
+    padding-right: $space-md;
   }
 
   @include breakpoint($x-large) {
@@ -59,8 +59,8 @@
 .pagination {
   @include full();
   @include clearfix();
-  margin-top: 1em;
-  padding-top: 1em;
+  margin-top: $space-md;
+  padding-top: $space-md;
 
   ul {
     margin: 0;
@@ -75,29 +75,35 @@
     margin-left: -1px;
 
     a {
-      margin-bottom: 0.25em;
-      padding: 0.5em 1em;
+      margin-bottom: $space-2xs;
+      padding: $space-sm $space-md;
       font-family: $sans-serif;
       font-size: 14px;
       font-weight: bold;
       line-height: 1.5;
       text-align: center;
       text-decoration: none;
-      color: mix(#fff, $gray, 25%);
-      border: 1px solid $light-gray;
+      color: $ink-muted;
+      border: 1px solid $border-subtle;
       border-radius: 0;
+      transition: background-color $transition-standard, border-color $transition-standard, box-shadow $transition-standard;
 
       &:hover {
         color: $link-color-hover;
+        background: $surface;
+        text-decoration: underline;
+        text-underline-offset: $space-2xs;
       }
 
+      &:active { box-shadow: inset 0 0 0 2px rgba($ink, .18); }
+
       &.current {
-        color: #fff;
+        color: $surface-elevated;
         background: $primary-color;
       }
 
       &.disabled {
-        color: mix(#fff, $gray, 75%);
+        color: mix($surface-elevated, $gray, 75%);
         pointer-events: none;
         cursor: not-allowed;
       }
@@ -107,15 +113,15 @@
       margin-left: 0;
 
       a {
-        border-top-left-radius: $border-radius;
-        border-bottom-left-radius: $border-radius;
+        border-top-left-radius: $radius-small;
+        border-bottom-left-radius: $radius-small;
       }
     }
 
     &:last-child {
       a {
-        border-top-right-radius: $border-radius;
-        border-bottom-right-radius: $border-radius;
+        border-top-right-radius: $radius-small;
+        border-bottom-right-radius: $radius-small;
       }
     }
   }
@@ -123,7 +129,7 @@
   /* next/previous buttons */
   &--pager {
     display: block;
-    padding: 1em 2em;
+    padding: $space-md $space-lg;
     float: left;
     width: 50%;
     font-family: $sans-serif;
@@ -131,13 +137,19 @@
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    color: mix(#fff, $gray, 50%);
-    border: 1px solid $light-gray;
-    border-radius: $border-radius;
+    color: $ink-muted;
+    border: 1px solid $border-subtle;
+    border-radius: $radius-small;
+    transition: background-color $transition-standard, border-color $transition-standard, box-shadow $transition-standard;
 
     &:hover {
       color: $link-color-hover;
+      background: $surface;
+      text-decoration: underline;
+      text-underline-offset: $space-2xs;
     }
+
+    &:active { box-shadow: inset 0 0 0 2px rgba($ink, .18); }
 
     &:first-child {
       border-top-right-radius: 0;
@@ -151,7 +163,7 @@
     }
 
     &.disabled {
-      color: mix(#fff, $gray, 75%);
+      color: mix($surface-elevated, $gray, 75%);
       pointer-events: none;
       cursor: not-allowed;
     }
@@ -162,9 +174,9 @@
 .page__meta + .pagination,
 .page__share + .pagination,
 .page__comments + .pagination {
-  margin-top: 2em;
-  padding-top: 2em;
-  border-top: 1px solid $border-color;
+  margin-top: $space-lg;
+  padding-top: $space-lg;
+  border-top: 1px solid $border-subtle;
 }
 
 
@@ -179,25 +191,28 @@
 
   a {
     display: block;
-    margin: 0 1rem;
-    padding: 0.5rem 0;
+    margin: 0 $space-md;
+    padding: $space-sm 0;
     color: $masthead-link-color;
     text-decoration: none;
+    transition: color $transition-standard, background-color $transition-standard, box-shadow $transition-standard;
 
     &:hover {
       color: $masthead-link-color-hover;
     }
+
+    &:active { box-shadow: inset 0 -2px 0 $border-strong; }
   }
 
   button {
     position: absolute;
     height: 100%;
     right: 0;
-    padding: 0 0.5rem;
+    padding: 0 $space-sm;
     border: 0;
     outline: none;
     background-color: $primary-color;
-    color: #fff;
+    color: $surface-elevated;
     cursor: pointer;
   }
 
@@ -232,8 +247,8 @@
         position: absolute;
         left: 0;
         bottom: 0;
-        height: 4px;
-        background: mix(#fff, $primary-color, 50%);
+        height: $space-2xs;
+        background: mix($surface-elevated, $primary-color, 50%);
         width: 100%;
         -webkit-transition: $global-transition;
         transition: $global-transition;
@@ -254,22 +269,24 @@
     position: absolute;
     top: 100%;
     right: 0;
-    margin-top: 15px;
-    padding: 5px;
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(#000, 0.25);
+    margin-top: $space-md;
+    padding: $space-xs;
+    border: 1px solid $border-strong;
+    border-radius: $radius-small;
+    background: $surface-elevated;
+    box-shadow: $elevation-floating;
     z-index: 20;
 
     a {
       margin: 0;
-      padding: 10px 20px;
+      padding: $space-sm $space-md;
       font-size: $type-size-5;
 
       &:hover {
         color: $masthead-link-color-hover;
-        background: mix(#fff, $primary-color, 75%);
+        background: mix($surface-elevated, $primary-color, 75%);
+        text-decoration: underline;
+        text-underline-offset: $space-2xs;
       }
     }
 
@@ -281,7 +298,7 @@
       width: 0;
       border-style: solid;
       border-width: 0 10px 10px;
-      border-color: $border-color transparent;
+      border-color: $border-strong transparent;
       display: block;
       z-index: 0;
     }
@@ -294,14 +311,14 @@
       width: 0;
       border-style: solid;
       border-width: 0 10px 10px;
-      border-color: #fff transparent;
+      border-color: $surface-elevated transparent;
       display: block;
       z-index: 1;
     }
 
     li {
       display: block;
-      border-bottom: 1px solid $border-color;
+      border-bottom: 1px solid $border-subtle;
 
       &:last-child {
         border-bottom: none;
@@ -338,23 +355,27 @@
     display: block;
     padding: 0.125em 0;
     color: inherit;
+    transition: background-color $transition-standard, box-shadow $transition-standard;
 
     &:hover {
       text-decoration: underline;
+      text-underline-offset: $space-2xs;
     }
+
+    &:active { box-shadow: inset 3px 0 0 $border-strong; }
   }
 
   .active {
     margin-left: -0.5em;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    color: #fff;
+    color: $surface-elevated;
     font-weight: bold;
     background: $primary-color;
-    border-radius: $border-radius;
+    border-radius: $radius-small;
 
     &:hover {
-      color: #fff;
+      color: $surface-elevated;
     }
   }
 }
@@ -375,7 +396,7 @@
   font-size: $type-size-6;
   font-weight: bold;
   text-transform: uppercase;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid $border-subtle;
 }
 
 
@@ -388,17 +409,16 @@
   color: $gray;
   text-transform: uppercase;
   letter-spacing: 1px;
-  background-color: #fff;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
+  background-color: $surface-page;
+  border: 1px solid $border-subtle;
+  border-radius: $radius-small;
 
   .nav__title {
-    color: #fff;
+    color: $surface-elevated;
     font-size: $type-size-6;
     background: $primary-color;
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
+    border-top-left-radius: $radius-small;
+    border-top-right-radius: $radius-small;
   }
 }
 
@@ -417,11 +437,16 @@
     font-weight: bold;
     line-height: 1.5;
     border-bottom: 1px solid $border-color;
+    transition: background-color $transition-standard, box-shadow $transition-standard;
 
     &:hover {
       color: #000;
       background: $lighter-gray;
+      text-decoration: underline;
+      text-underline-offset: $space-2xs;
     }
+
+    &:active { box-shadow: inset 3px 0 0 $border-strong; }
   }
 
   > li:last-child {

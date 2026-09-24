@@ -192,17 +192,38 @@ $susy: (
 
 
 /*
-   Other
+   Component language
+
+   These are the shared primitives for component surfaces, separation,
+   rhythm, and interaction. Keep elevation for content that genuinely floats
+   above the page (menus and popovers); ordinary sections use borders and
+   whitespace instead.
    ========================================================================== */
 
-$border-radius              : 6px;
-$border-radius-large        : 16px;
+$surface-page               : $paper;
+$surface-elevated           : #fff;
+$border-subtle              : $border-color;
+$border-strong              : mix($ink, $border-color, 38%);
+$radius-small               : 6px;
+$radius-large               : 16px;
+$elevation-floating         : 0 8px 24px rgba($ink, 0.14);
+$focus-treatment            : 0 0 0 3px rgba($accent, 0.35);
+
+$space-2xs                  : 0.25rem;
 $space-xs                   : 0.375rem;
 $space-sm                   : 0.75rem;
 $space-md                   : 1.5rem;
 $space-lg                   : 3rem;
-$box-shadow                 : 0 8px 24px rgba($ink, 0.08);
-$focus-ring                 : 0 0 0 3px rgba($accent, 0.35);
+$space-xl                   : 6rem;
+
+$transition-standard        : 160ms ease;
+$transition-emphasized      : 240ms ease-in-out;
+
+/* Compatibility aliases for theme partials outside the component system. */
+$border-radius              : $radius-small;
+$border-radius-large        : $radius-large;
+$box-shadow                 : $elevation-floating;
+$focus-ring                 : $focus-treatment;
 $navicon-width              : 28px;
 $navicon-height             : 4px;
-$global-transition          : all 0.2s ease-in-out;
+$global-transition          : all $transition-emphasized;
