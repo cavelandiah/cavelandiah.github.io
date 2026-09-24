@@ -174,7 +174,7 @@
 
 .greedy-nav {
   position: relative;
-  min-width: 250px;
+  min-width: 0;
   background: $background-color;
 
   a {
@@ -203,6 +203,7 @@
 
   .visible-links {
     display: table;
+    max-width: 100%;
 
     li {
       display: table-cell;
@@ -259,6 +260,7 @@
     border-radius: $border-radius;
     background: #fff;
     box-shadow: 0 0 10px rgba(#000, 0.25);
+    z-index: 20;
 
     a {
       margin: 0;
@@ -304,6 +306,18 @@
       &:last-child {
         border-bottom: none;
       }
+    }
+  }
+}
+
+@media (max-width: 30em) {
+  .masthead__menu-item--lg {
+    padding-right: 0;
+
+    a {
+      max-width: calc(100vw - 7rem);
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }
