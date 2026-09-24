@@ -1,27 +1,39 @@
 /* Scientific identity components: hero, research cards, figures, and a11y. */
 .science-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(16rem, 0.9fr);
-  gap: $space-lg;
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 1.15fr);
+  gap: clamp(2rem, 6vw, 5.5rem);
   align-items: center;
-  margin: 0 0 $space-lg;
-  padding: $space-lg;
+  margin: 0 0 clamp(2rem, 5vw, $space-lg);
+  padding: clamp(1.5rem, 4vw, 4rem);
   overflow: hidden;
   background: linear-gradient(135deg, $surface, $paper 70%);
   border: 1px solid $border-color;
   border-radius: $border-radius-large;
 
-  &__eyebrow { color: $pair-a; font-family: $sans-serif; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-  &__title { max-width: 15ch; margin: .25em 0; font-size: clamp(2rem, 5vw, 3.75rem); letter-spacing: -.035em; }
-  &__lede { max-width: 57ch; color: $ink-muted; font-size: 1.1rem; }
-  &__art { width: 100%; height: auto; }
-  &__backbone { fill: none; stroke: $ink-muted; stroke-width: 2; }
-  &__pair { fill: none; stroke: $pair-b; stroke-width: 2; opacity: .65; }
-  &__trajectory { fill: none; stroke: $accent; stroke-width: 2.5; stroke-dasharray: 5 6; animation: trace 8s linear infinite; }
-  &__node { fill: $paper; stroke: $pair-a; stroke-width: 3; }
+  &__copy { max-width: 38rem; }
+  &__eyebrow { margin-bottom: clamp(.6rem, 1.5vw, 1rem); color: $pair-a; font-family: $sans-serif; font-size: clamp(.72rem, 1vw, .85rem); font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+  &__title { max-width: 13ch; margin: 0 0 clamp(1rem, 2vw, 1.5rem); font-size: clamp(2.15rem, 5vw, 4.25rem); line-height: 1.02; letter-spacing: -.04em; }
+  &__lede { max-width: 55ch; margin-bottom: clamp(1.4rem, 3vw, 2.25rem); color: $ink-muted; font-size: clamp(1rem, 1.5vw, 1.18rem); line-height: 1.65; }
+  &__actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+  &__action { display: inline-flex; align-items: center; min-height: 2.75rem; padding: .7rem 1.05rem; font-family: $sans-serif; font-size: .9rem; font-weight: 700; line-height: 1.2; border: 2px solid $pair-a; border-radius: $border-radius; transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease; }
+  &__action--primary { color: $paper; background: $pair-a; }
+  &__action--primary:hover { color: $paper; background: $pair-b; border-color: $pair-b; transform: translateY(-1px); }
+  &__action--secondary { color: $pair-a; background: transparent; }
+  &__action--secondary:hover { color: $paper; background: $pair-a; transform: translateY(-1px); }
+  &__action:focus-visible { outline: 3px solid $accent; outline-offset: 3px; box-shadow: $focus-ring; }
+  &__art { display: block; width: 100%; max-width: clamp(25rem, 46vw, 42rem); height: auto; margin-inline: auto; overflow: visible; }
+  &__strand { fill: none; stroke: $ink-muted; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+  &__pair { fill: none; stroke: $pair-b; stroke-width: 2; stroke-linecap: round; opacity: .6; }
+  &__field { color: $pair-b; }
+  &__alignment { fill: $pair-a; stroke: $pair-a; stroke-width: 2; stroke-linecap: round; opacity: .38; }
+  &__evidence-dots { fill: $paper; stroke: $pair-a; stroke-width: 2; }
+  &__signal-halo { color: $accent; transform-origin: 584px 199px; animation: signal-pulse 6s ease-in-out infinite; }
+  &__mature { fill: none; stroke: $accent; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 14 9; animation: mature-signal 10s linear infinite; }
 }
 
-@keyframes trace { to { stroke-dashoffset: -88; } }
+@keyframes mature-signal { to { stroke-dashoffset: -46; } }
+@keyframes signal-pulse { 50% { opacity: .68; transform: scale(1.08); } }
 
 .research-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: $space-md; margin: $space-lg 0; }
 .research-card { padding: $space-md; background: $surface; border-top: 3px solid $pair-a; border-radius: $border-radius; }
@@ -148,8 +160,9 @@
 :focus-visible { outline: 3px solid $accent; outline-offset: 3px; box-shadow: $focus-ring; }
 
 @media (max-width: $medium) {
-  .science-hero { grid-template-columns: 1fr; padding: $space-md; }
-  .science-hero__art { max-height: 17rem; }
+  .science-hero { grid-template-columns: minmax(0, 1fr); padding: clamp(1.25rem, 6vw, $space-md); }
+  .science-hero__art { max-width: 34rem; }
+  .science-hero__peripheral { clip-path: inset(8% 0 6% 9%); }
   .research-grid { grid-template-columns: 1fr; }
   .capability-grid, .engagement-steps { grid-template-columns: 1fr; }
   .cv-entry { grid-template-columns: 1fr; gap: $space-xs; }
@@ -159,4 +172,5 @@
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .science-hero__mature, .science-hero__signal-halo { animation: none !important; }
 }
