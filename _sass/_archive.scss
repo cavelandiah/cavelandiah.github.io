@@ -174,7 +174,7 @@
 .feature__wrapper {
   @include clearfix();
   margin-bottom: 2em;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid $border-subtle;
 }
 
 .feature__item {

@@ -18,7 +18,7 @@
   &__actions { display: flex; flex-wrap: wrap; gap: $space-sm; }
   &__action { display: inline-flex; align-items: center; min-height: 2.75rem; padding: $space-sm $space-md; font-family: $sans-serif; font-size: .9rem; font-weight: 700; line-height: 1.2; border: 2px solid $pair-a; border-radius: $radius-small; transition: color $transition-standard, background-color $transition-standard, border-color $transition-standard, box-shadow $transition-standard; }
   &__action--primary { color: $surface-page; background: $pair-a; }
-  &__action--primary:hover { color: $surface-page; background: $pair-b; border-color: $pair-b; text-decoration: underline; text-underline-offset: $space-2xs; }
+  &__action--primary:hover { color: $paper; background: mix(#000, $pair-a, 18%); border-color: mix(#000, $pair-a, 18%); text-decoration: underline; text-underline-offset: $space-2xs; }
   &__action--secondary { color: $pair-a; background: transparent; }
   &__action--secondary:hover { color: $surface-page; background: $pair-a; text-decoration: underline; text-underline-offset: $space-2xs; }
   &__action:focus-visible { outline: 3px solid $accent; outline-offset: $space-2xs; box-shadow: $focus-treatment; }
@@ -60,8 +60,8 @@
 
 .research-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp($space-md, 3vw, $space-lg); }
 .research-card { padding: $space-md 0 0; border-top: 3px solid $pair-a; }
-.research-card:nth-child(2) { margin-top: clamp(1rem, 3vw, 2.5rem); border-top-color: $pair-b; }
-.research-card:nth-child(3) { margin-top: clamp(2rem, 6vw, 5rem); border-top-color: $accent; }
+.research-card:nth-child(2) { margin-top: clamp(1rem, 3vw, 2.5rem); }
+.research-card:nth-child(3) { margin-top: clamp(2rem, 6vw, 5rem); }
 .research-card h3 { margin: 0 0 $space-sm; }
 .research-card p:last-child { margin-bottom: 0; color: $ink-muted; }
 .research-card__number { margin: 0 0 $space-md; color: $ink-muted; font-family: $sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .1em; }
