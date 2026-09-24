@@ -18,7 +18,10 @@ redirect_from:
   <a href="#teaching">Teaching</a>
   <a href="#presentations">Presentations</a>
   <a href="#publications">Publications</a>
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> updates
   <a href="#awards">Awards</a>
 </nav>
 
@@ -110,7 +113,6 @@ redirect_from:
   {% include publication-cv.html %}
 {% endfor %}
 </ul>
-<!-- Publications are intentionally not generated here until every record in _publications has verified metadata and all template placeholder text has been removed. -->
 
 ## Awards
 {: #awards }

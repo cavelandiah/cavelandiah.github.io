@@ -63,8 +63,23 @@
 .publication-card__type { color: $pair-b; font-family: $sans-serif; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .publication-card__authors, .publication-card__venue { color: $ink-muted; font-size: .9rem; }
 
+.talk-card {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  gap: $space-md;
+  padding: $space-md 0;
+  border-top: 1px solid $border-color;
+
+  h2 { margin: 0 0 $space-xs; font-size: 1.1rem; line-height: 1.35; }
+  p { margin: $space-xs 0; }
+}
+.talk-card__date { color: $pair-a; font-family: $sans-serif; font-weight: 700; }
+.talk-card__meta { color: $ink-muted; }
+.talk-card__slides { font-family: $sans-serif; font-size: .85rem; font-weight: 700; }
+
 @media (max-width: $medium) {
   .cv-entry { grid-template-columns: 1fr; gap: $space-xs; }
   .cv-skill-grid, .publication-year { grid-template-columns: 1fr; }
   .publication-year > h2 { grid-row: auto; margin-bottom: $space-md; }
+  .talk-card { grid-template-columns: 1fr; gap: $space-xs; }
 }
