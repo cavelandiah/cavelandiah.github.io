@@ -36,12 +36,79 @@
 @keyframes mature-signal { to { stroke-dashoffset: -46; } }
 @keyframes signal-pulse { 50% { opacity: .68; transform: scale(1.08); } }
 
-.research-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: $space-md; margin: $space-lg 0; }
-.research-card { padding: $space-md 0; background: $surface-page; border-top: 3px solid $pair-a; }
-.research-card:nth-child(2) { border-top-color: $pair-b; }
-.research-card:nth-child(3) { border-top-color: $accent; }
-.research-card h2 { margin: 0 0 $space-sm; }
-.research-card p:last-child { margin-bottom: 0; }
+.about-section {
+  margin: 0 0 clamp(4rem, 9vw, 7.5rem);
+
+  &__heading { display: grid; grid-template-columns: 4rem minmax(0, 1fr); align-items: baseline; margin-bottom: clamp(1.5rem, 4vw, 2.75rem); }
+  &__heading h2 { margin: 0; }
+  &__index { margin: 0; color: $pair-b; font-family: $sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .12em; }
+  &__lead { color: $ink; font-size: clamp(1.08rem, 1.8vw, 1.3rem); line-height: 1.65; }
+}
+
+.about-position {
+  display: grid;
+  grid-template-columns: minmax(12rem, .65fr) minmax(20rem, 1.35fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  padding-top: clamp(1rem, 3vw, 2.5rem);
+  border-top: 1px solid $border-subtle;
+
+  .about-section__heading { display: block; }
+  .about-section__index { margin-bottom: $space-sm; }
+  h2 { max-width: 10ch; }
+  p:last-child { margin-bottom: 0; color: $ink-muted; }
+}
+
+.research-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp($space-md, 3vw, $space-lg); }
+.research-card { padding: $space-md 0 0; border-top: 3px solid $pair-a; }
+.research-card:nth-child(2) { margin-top: clamp(1rem, 3vw, 2.5rem); border-top-color: $pair-b; }
+.research-card:nth-child(3) { margin-top: clamp(2rem, 6vw, 5rem); border-top-color: $accent; }
+.research-card h3 { margin: 0 0 $space-sm; }
+.research-card p:last-child { margin-bottom: 0; color: $ink-muted; }
+.research-card__number { margin: 0 0 $space-md; color: $ink-muted; font-family: $sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .1em; }
+
+.about-approach {
+  display: grid;
+  grid-template-columns: minmax(18rem, .8fr) minmax(24rem, 1.2fr);
+  gap: clamp(2.5rem, 7vw, 7rem);
+  align-items: center;
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+  border-top: 1px solid $border-subtle;
+  border-bottom: 1px solid $border-subtle;
+
+  h2 { margin: $space-sm 0 $space-lg; }
+  p:last-child { margin-bottom: 0; }
+}
+
+.about-work__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp($space-md, 3vw, $space-lg);
+
+  .publication-card { display: flex; flex-direction: column; margin: 0; padding: $space-md 0; border-top: 1px solid $border-strong; border-bottom: 0; }
+  .publication-card__summary { margin-top: auto; padding-top: $space-md; color: $ink; font-size: .95rem; line-height: 1.55; }
+}
+.about-work__more { margin: $space-lg 0 0; font-family: $sans-serif; font-weight: 700; }
+
+.about-questions {
+  display: grid;
+  grid-template-columns: minmax(12rem, .7fr) minmax(20rem, 1.3fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  padding-top: clamp(1.5rem, 4vw, 3rem);
+  border-top: 1px solid $border-subtle;
+
+  .about-section__heading { display: block; margin: 0; }
+  .about-section__index { margin-bottom: $space-sm; }
+}
+.about-questions__list {
+  margin: 0;
+  padding: 0;
+  counter-reset: question;
+  list-style: none;
+
+  li { display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); gap: $space-sm; padding: 0 0 $space-md; font-size: 1.05rem; line-height: 1.55; counter-increment: question; }
+  li + li { padding-top: $space-md; border-top: 1px solid $border-subtle; }
+  li::before { color: $pair-b; font-family: $sans-serif; font-size: .75rem; font-weight: 700; content: "0" counter(question); }
+}
 
 .capability-grid {
   display: grid;
@@ -76,19 +143,23 @@
 }
 
 .contact-callout {
-  margin: $space-lg 0;
-  padding: $space-lg;
-  background: linear-gradient(135deg, $surface, $surface-page);
-  border: 1px solid $border-subtle;
-  border-left: 4px solid $accent;
-  border-radius: $radius-large;
+  display: grid;
+  grid-template-columns: minmax(18rem, 1fr) auto;
+  gap: $space-lg;
+  align-items: end;
+  margin: 0;
+  padding: clamp(1.5rem, 4vw, 3rem) 0 0;
+  border-top: 3px solid $accent;
 
-  h2 { margin-top: 0; }
-  p { max-width: 60ch; }
+  h2 { margin: $space-sm 0; }
+  p { max-width: 54ch; margin-bottom: 0; color: $ink-muted; }
 }
+.contact-callout__actions { display: flex; flex-direction: column; gap: $space-sm; align-items: flex-start; }
+.contact-callout__link { font-family: $sans-serif; font-size: .88rem; font-weight: 700; }
 
-.scientific-figure { padding: $space-sm; background: $surface; border: 1px solid $border-subtle; border-radius: $radius-small; }
-.scientific-figure figcaption { padding: 0 $space-sm $space-sm; color: $ink-muted; font-size: .875rem; line-height: 1.5; }
+.scientific-figure { margin: 0; padding: $space-sm; border-left: 1px solid $border-subtle; }
+.scientific-figure img { display: block; width: 100%; }
+.scientific-figure figcaption { max-width: 58ch; padding: $space-sm $space-sm 0; color: $ink-muted; font-size: .875rem; line-height: 1.5; }
 
 /* Compact, scan-friendly curriculum vitae. */
 .cv-intro { max-width: 62ch; color: $ink-muted; font-size: 1.1rem; }
@@ -165,11 +236,15 @@
   .science-hero__title { font-size: clamp(2.15rem, 9vw, 4rem); }
   .science-hero__art { width: 100%; max-width: 34rem; margin: 0 auto; }
   .science-hero__peripheral { clip-path: inset(8% 0 6% 9%); }
-  .research-grid { grid-template-columns: 1fr; }
+  .about-position, .about-approach, .about-questions, .contact-callout { grid-template-columns: 1fr; }
+  .about-section__heading { grid-template-columns: 2.5rem minmax(0, 1fr); }
+  .research-grid, .about-work__grid { grid-template-columns: 1fr; }
+  .research-card:nth-child(2), .research-card:nth-child(3) { margin-top: 0; }
+  .scientific-figure { border-top: 1px solid $border-subtle; border-left: 0; }
   .capability-grid, .engagement-steps { grid-template-columns: 1fr; }
   .cv-entry { grid-template-columns: 1fr; gap: $space-xs; }
   .cv-skill-grid { grid-template-columns: 1fr; }
-  .contact-callout { padding: $space-md; }
+  .contact-callout__actions { margin-top: $space-sm; }
 }
 
 @media (max-width: 23.5rem) {
