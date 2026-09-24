@@ -36,7 +36,9 @@
 
 .page__title {
   margin-top: 0;
-  line-height: 1;
+  font-size: $type-title-size;
+  line-height: $type-title-line-height;
+  letter-spacing: $type-title-tracking;
 
   & + .page__meta {
     margin-top: -0.5em;
@@ -49,6 +51,14 @@
 }
 
 .page__content {
+
+  > p,
+  > ul,
+  > ol,
+  > dl,
+  > blockquote {
+    max-width: $type-body-measure;
+  }
 
   h2 {
     padding-bottom: 0.5em;
