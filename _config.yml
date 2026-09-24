@@ -7,14 +7,14 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Decoding the RNA regulation language"
+title                    : "Cristian A. Velandia Huerto | Computational RNA Biology"
 title_separator          : "-"
-name                     : &name "Cristian A. Velandia Huerto, PhD"
-description              : &description "Looking further walls"
+name                     : &name "Cristian A. Velandia Huerto"
+description              : &description "Computational RNA biology, comparative genomics, and reproducible bioinformatics."
 url                      : https://cavelandiah.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "cavelandiah/cavelandiah.github.io"
-teaser                   : "profile.png" # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
+teaser                   : "profile.png" # Verified local profile image; filename is relative to /images/.
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 future                   : true
@@ -57,38 +57,39 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username               : # TODO: Add only after verifying the researcher's current X/Twitter profile URL.
 facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Open Graph/Twitter default site image
+og_image                 : "profile.png" # Verified local profile image; replace if a dedicated social-sharing image is approved.
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  type                   : "Person"
+  name                   : *name
+  links:
+    - "https://orcid.org/0000-0002-1370-3560"
+    - "https://github.com/cavelandiah"
+    # TODO: Add other profiles only after their current URLs have been verified.
 
 
 # Analytics
 analytics:
-  provider               :  "google-universal" # false (default), "google", "google-universal", "custom"
-  google:
-    tracking_id          :
+  provider               : false # Enable only with a supported provider, valid identifier, and published privacy policy.
 
 
 # Site Author
 author:
   name             : "Cristian A. Velandia Huerto"
   avatar           : "profile.png"
-  bio              : "Postdoc at the Theoretical Biochemistry Group studying regulatory ncRNAs"
+  bio              : "Computational RNA biologist working across comparative genomics and reproducible bioinformatics."
   location         : "Vienna, Austria"
-  employer         :
+  employer         : # TODO: Confirm the researcher's current institution before populating this field.
   pubmed           : "https://pubmed.ncbi.nlm.nih.gov/?term=Velandia-Huerto%2C+CA%5BAuthor%5D"
-  googlescholar    : "https://scholar.google.com/citations?user=oA6y0BsAAAAJ&hl=en"
+  googlescholar    : "https://scholar.google.com/citations?user=oA6y0BsAAAAJ&hl=en" # TODO: Verify this profile URL is current.
   email            : "cavelandiah@tbi.univie.ac.at"
-  researchgate     :  "https://www.researchgate.net/profile/Cristian-Velandia-Huerto" # example: "https://www.researchgate.net/profile/yourprofile"
+  researchgate     : "https://www.researchgate.net/profile/Cristian-Velandia-Huerto" # TODO: Verify this profile URL is current.
   uri              :
   bitbucket        :
   codepen          :
@@ -102,8 +103,8 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "cavelandiah"
-  orcid            : "http://orcid.org/0000-0002-1370-3560"
+  linkedin         : # TODO: Add only after verifying the researcher's current LinkedIn profile URL.
+  orcid            : "https://orcid.org/0000-0002-1370-3560"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
@@ -175,13 +176,10 @@ kramdown:
 
 # Collections
 collections:
-  teaching:
-    output: true
-    permalink: /:collection/:path/
   publications:
     output: true
     permalink: /:collection/:path/
-  portfolio:
+  posters:
     output: true
     permalink: /:collection/:path/
   talks:
@@ -209,15 +207,6 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _teaching
-  - scope:
-      path: ""
-      type: teaching
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
   # _publications
   - scope:
       path: ""
@@ -227,15 +216,14 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _portfolio
+  # _posters
   - scope:
       path: ""
-      type: portfolio
+      type: posters
     values:
-      layout: single
+      layout: talk
       author_profile: true
       share: true
-      comment: true
   # _talks
   - scope:
       path: ""
@@ -255,7 +243,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Europe/Vienna # Researcher's publication timezone (Vienna, Austria).
 
 
 # Plugins

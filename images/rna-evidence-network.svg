@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
+  <title id="title">RNA evidence network</title><desc id="desc">Sequence bases and a hairpin feed into evolutionary evidence and a validated annotation.</desc>
+  <rect width="900" height="360" rx="24" fill="#f1f6f3"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M90 180H294M395 180H570M680 180H815" stroke="#50636b" stroke-width="3"/>
+    <path d="M295 180c0-98 100-98 100 0M315 168h60M320 146h50M330 124h30" stroke="#6356a5" stroke-width="5"/>
+    <path d="M570 180c35-85 75 85 110 0" stroke="#c73e2d" stroke-width="4" stroke-dasharray="8 9"/>
+  </g>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <g font-weight="700" font-size="22"><circle cx="90" cy="180" r="26" fill="#087f75"/><text x="90" y="188" fill="white">A</text><circle cx="158" cy="180" r="26" fill="#6356a5"/><text x="158" y="188" fill="white">U</text><circle cx="226" cy="180" r="26" fill="#087f75"/><text x="226" y="188" fill="white">G</text></g>
+    <g fill="#fbfcfa" stroke="#087f75" stroke-width="5"><circle cx="570" cy="180" r="34"/><circle cx="680" cy="180" r="34"/><circle cx="815" cy="180" r="42"/></g>
+    <g fill="#172b35" font-size="16"><text x="158" y="242">sequence</text><text x="345" y="242">structure</text><text x="625" y="242">evolution</text><text x="815" y="247">annotation</text></g>
+    <text x="815" y="189" fill="#087f75" font-size="28" font-weight="700">✓</text>
+  </g>
+</svg>

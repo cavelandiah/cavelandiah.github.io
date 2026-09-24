@@ -1,0 +1,12 @@
+{% include base_path %}
+
+<article class="talk-card" itemscope itemtype="https://schema.org/PresentationDigitalDocument">
+  <p class="talk-card__date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %Y" }}</time></p>
+  <div>
+    <h2 itemprop="name">
+      {% if post.link %}<a href="{{ post.link | prepend: base_path }}">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}
+    </h2>
+    <p class="talk-card__meta"><span itemprop="publisher">{{ post.venue }}</span>{% if post.location %}<span aria-hidden="true"> · </span>{{ post.location }}{% endif %}</p>
+    {% if post.link %}<p><a class="talk-card__slides" href="{{ post.link | prepend: base_path }}">View presentation slides</a></p>{% endif %}
+  </div>
+</article>
