@@ -14,7 +14,8 @@
   margin-bottom: $space-md;
 
   @include breakpoint($large) {
-    @include span(2 of 12);
+    grid-column: 1;
+    min-width: 0;
     opacity: 1;
     -webkit-transition: opacity $transition-standard;
             transition: opacity $transition-standard;
@@ -70,14 +71,13 @@
    ========================================================================== */
 
 .author__avatar {
-  display: table-cell;
-  vertical-align: top;
+  flex: 0 0 36px;
   width: 36px;
   // set width only, for non-square avatars
   // height: 36px;
 
   @include breakpoint($large) {
-    display: block;
+    flex-basis: auto;
     width: auto;
     height: auto;
   }
@@ -94,10 +94,9 @@
 }
 
 .author__content {
-  display: table-cell;
-  vertical-align: top;
-  padding-left: $space-md;
-  padding-right: $space-lg;
+  min-width: 0;
+  padding-left: 0;
+  padding-right: 0;
   line-height: 1;
 
   @include breakpoint($large) {
@@ -132,8 +131,7 @@
 
 .author__urls-wrapper {
   position: relative;
-  display: table-cell;
-  vertical-align: middle;
+  flex: 0 0 auto;
   font-family: $sans-serif;
   z-index: 10;
   position: relative;
@@ -155,6 +153,46 @@
     @include breakpoint($large) {
       display: none;
     }
+  }
+}
+
+.author-profile {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-md;
+
+  @include breakpoint($large) {
+    &--sidebar { display: block; }
+  }
+}
+
+.author-profile--compact {
+  align-items: center;
+
+  .author__avatar {
+    flex-basis: 64px;
+    width: 64px;
+  }
+
+  .author__avatar img { padding: 0; }
+  .author__content { flex: 1 1 auto; padding: 0; }
+  .author__name { margin: 0 0 $space-xs; }
+  .author__bio { margin: 0; max-width: $type-body-measure; }
+
+  @include breakpoint($large) {
+    .author__urls-wrapper { display: block; }
+    .author__urls-wrapper button { display: inline-block; }
+    .author__urls { position: absolute; right: 0; }
+  }
+}
+
+@include breakpoint(max-width $small) {
+  .author-profile--compact {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+
+    .author__avatar { width: 48px; }
+    .author__urls-wrapper { grid-column: 1 / -1; }
   }
 }
 

@@ -4,6 +4,33 @@ layout: default
 
 {% include base_path %}
 
+{% comment %}
+  Front matter API:
+  - shell_variant: home, wide, or editorial (layout_variant remains an alias)
+  - author_profile: true/false
+  - author_profile_position: sidebar, summary, or none
+{% endcomment %}
+{% assign shell_variant = page.shell_variant | default: page.layout_variant %}
+{% if shell_variant == nil %}
+  {% if page.url == "/" %}
+    {% assign shell_variant = "home" %}
+  {% elsif page.sidebar or page.collection or page.url == "/cv/" %}
+    {% assign shell_variant = "editorial" %}
+  {% else %}
+    {% assign shell_variant = "wide" %}
+  {% endif %}
+{% endif %}
+
+{% assign show_profile = false %}
+{% if page.author_profile or layout.author_profile %}{% assign show_profile = true %}{% endif %}
+{% assign profile_position = page.author_profile_position %}
+{% if profile_position == nil and show_profile %}
+  {% if shell_variant == "editorial" %}{% assign profile_position = "sidebar" %}{% else %}{% assign profile_position = "summary" %}{% endif %}
+{% endif %}
+{% assign has_editorial_sidebar = false %}
+{% if shell_variant == "editorial" and page.sidebar %}{% assign has_editorial_sidebar = true %}{% endif %}
+{% if shell_variant == "editorial" and profile_position == "sidebar" and show_profile %}{% assign has_editorial_sidebar = true %}{% endif %}
+
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
 {% endif %}
@@ -14,8 +41,12 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main">
-  {% include sidebar.html %}
+<div id="main" class="page-shell page-shell--{{ shell_variant }}{% if has_editorial_sidebar %} page-shell--with-sidebar{% endif %}" role="main">
+  {% if has_editorial_sidebar %}
+    {% assign show_sidebar_author = false %}
+    {% if profile_position == "sidebar" and show_profile %}{% assign show_sidebar_author = true %}{% endif %}
+    {% include sidebar.html show_author=show_sidebar_author %}
+  {% endif %}
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
@@ -73,6 +104,12 @@ layout: default
       {% include comments.html %}
     {% endif %}
   </article>
+
+  {% if profile_position == "summary" and show_profile %}
+    <aside class="page__author-summary" aria-label="About the author">
+      {% include author-profile.html variant="compact" %}
+    </aside>
+  {% endif %}
 
   {% comment %}<!-- only show related on a post page when not disabled -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}

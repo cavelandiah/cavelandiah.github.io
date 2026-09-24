@@ -4,7 +4,9 @@
 
 #main {
   @include container;
-  @include clearfix;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  column-gap: $space-xl;
   margin-top: 2em;
   padding-left: 1em;
   padding-right: 1em;
@@ -16,11 +18,19 @@
   }
 }
 
-.page {
+.page-shell--with-sidebar {
   @include breakpoint($large) {
-    @include span(10 of 12 last);
-    @include prefix(0.5 of 12);
-    @include suffix(2 of 12);
+    grid-template-columns: minmax(10rem, 2fr) minmax(0, 10fr);
+    align-items: start;
+  }
+}
+
+.page {
+  min-width: 0;
+  grid-column: 1;
+
+  .page-shell--with-sidebar & {
+    @include breakpoint($large) { grid-column: 2; }
   }
 
   .page__inner-wrap {
@@ -32,6 +42,23 @@
       @include full();
     }
   }
+}
+
+/* Home and wide pages use the same outer grid as the masthead and footer. */
+.page-shell--home,
+.page-shell--wide {
+  .page { width: 100%; }
+}
+
+.page__author-summary {
+  grid-column: 1 / -1;
+  margin-top: $space-xl;
+  padding-top: $space-lg;
+  border-top: 1px solid $border-color;
+}
+
+.page__related {
+  grid-column: 1 / -1;
 }
 
 .page__title {
@@ -58,6 +85,24 @@
   > dl,
   > blockquote {
     max-width: $type-body-measure;
+  }
+
+  /* Reading copy stays comfortable; visual material can use the full content grid. */
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    max-width: $type-body-measure;
+  }
+
+  > figure,
+  > .research-grid,
+  > .archive,
+  > .grid__wrapper {
+    width: 100%;
+    max-width: none;
   }
 
   h2 {
