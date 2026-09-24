@@ -11,49 +11,31 @@ redirect_from:
 
 Education
 ======
-* B.Sc. Biology, Universidad Nacional de Colombia, Colombia, 2013
+* B.Sc. in Biology, Universidad Nacional de Colombia, Colombia, 2013
 * M.Sc. in Bioinformatics, Universidad Nacional de Colombia, Colombia, 2015
-* Ph.D in Computer Science, Leipzig University, Germany, 2022
+* Ph.D. in Computer Science, Leipzig University, Germany, 2022
 
-Work experience
+Research experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* **Postdoctoral Researcher, Theoretical Biochemistry Group, University of Vienna, Austria** (2022–present)
+  * Studies regulatory non-coding RNAs and develops iterative models for de novo canonical microRNA annotation.
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* **Doctoral Researcher, Leipzig University, Germany** (2016–2022)
+  * Assessed metazoan microRNA annotations and traced microRNA evolution across chordates.
+  * Developed miRNAture, combining homology and structural evidence to identify bona fide microRNAs.
 
-Publications
+Research skills
 ======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+* **Computational biology:** comparative genomics; cross-species evolutionary analysis; probabilistic predictive modelling.
+* **RNA analysis:** non-coding RNA annotation; microRNA homology and secondary-structure analysis; tRNA evolution; tunicate genomics.
+* **Programming and data:** Python; shell scripting; SQL; biological sequence and annotation data processing.
+* **Workflow tooling:** miRNAture; Rfam and miRBase data integration; automated sequence retrieval and structural-alignment workflows.
+* **Reproducible research:** version-controlled analysis; explicit evidence integration; documented, reusable bioinformatics pipelines.
+
+<!-- Publications are intentionally not generated here until every record in _publications has verified metadata and its template placeholder text has been removed. -->
+
+<!-- Talks are intentionally not generated here until duplicate records, placeholder links and descriptions, dates, titles, venues, and locations in _talks have been verified and cleaned. -->
+
+<!-- Service and leadership details needed: verified organization, role or activity, and date range. Add the section only when this information is available. -->
+
+<!-- Add a downloadable CV link only when a current CV PDF (not presentation slides) is available in files/. -->
