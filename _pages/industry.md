@@ -63,5 +63,5 @@ Representative projects include:
 <aside class="contact-callout" aria-labelledby="industry-contact-title">
   <h2 id="industry-contact-title">Discuss a project</h2>
   <p>If your team has an RNA or comparative-genomics question, send a short description of the challenge, the data available, and the decision the work should support.</p>
-  <a class="btn btn--primary" href="mailto:{{ site.author.email }}">Email {{ site.author.name }}</a>
+  <a class="btn btn--primary" href="mailto:{{ site.author.email }}">Contact me</a>
 </aside>
