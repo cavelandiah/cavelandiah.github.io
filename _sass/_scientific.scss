@@ -78,6 +78,71 @@
 .scientific-figure { padding: $space-sm; background: $surface; border: 1px solid $border-color; border-radius: $border-radius-large; }
 .scientific-figure figcaption { padding: 0 $space-sm $space-sm; color: $ink-muted; font-size: .875rem; line-height: 1.5; }
 
+/* Compact, scan-friendly curriculum vitae. */
+.cv-intro { max-width: 62ch; color: $ink-muted; font-size: 1.1rem; }
+
+.cv-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-xs;
+  margin: $space-md 0 $space-lg;
+
+  a { padding: .4rem .75rem; color: $ink; font-family: $sans-serif; font-size: .85rem; font-weight: 700; background: $surface; border: 1px solid $border-color; border-radius: 999px; }
+  a:hover { color: $pair-a; border-color: $pair-a; }
+}
+
+.cv-timeline { margin-bottom: $space-lg; }
+.cv-entry {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: $space-md;
+  padding: $space-md 0;
+  border-top: 1px solid $border-color;
+
+  h3 { margin: 0 0 $space-xs; }
+  ul { margin-bottom: 0; }
+  li + li { margin-top: $space-xs; }
+}
+.cv-entry__date { margin: 0; color: $pair-a; font-family: $sans-serif; font-weight: 700; }
+.cv-entry__meta { margin: 0 0 $space-sm; color: $ink-muted; font-family: $sans-serif; }
+.cv-timeline--compact .cv-entry { padding: $space-sm 0; }
+
+.cv-skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $space-sm;
+  margin-bottom: $space-lg;
+
+  section { padding: $space-md; background: $surface; border-left: 3px solid $pair-b; border-radius: $border-radius; }
+  h3 { margin: 0 0 $space-xs; }
+  p { margin: 0; color: $ink-muted; }
+}
+
+.cv-publications {
+  li { margin-bottom: $space-sm; }
+  span { color: $ink-muted; }
+}
+
+.publications-intro, .publications-note { max-width: 65ch; color: $ink-muted; }
+.publication-year {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 0 $space-lg;
+  margin: $space-lg 0;
+
+  > h2 { grid-row: 1 / span 20; margin: 0; color: $pair-a; font-size: 1.4rem; }
+}
+.publication-card {
+  padding: 0 0 $space-md;
+  margin-bottom: $space-md;
+  border-bottom: 1px solid $border-color;
+
+  h3 { margin: $space-xs 0; font-size: 1.1rem; line-height: 1.35; }
+  p { margin: $space-xs 0; }
+}
+.publication-card__type { color: $pair-b; font-family: $sans-serif; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.publication-card__authors, .publication-card__venue { color: $ink-muted; font-size: .9rem; }
+
 .math, mjx-container { font-family: $math-font; }
 
 :focus-visible { outline: 3px solid $accent; outline-offset: 3px; box-shadow: $focus-ring; }
@@ -87,6 +152,8 @@
   .science-hero__art { max-height: 17rem; }
   .research-grid { grid-template-columns: 1fr; }
   .capability-grid, .engagement-steps { grid-template-columns: 1fr; }
+  .cv-entry { grid-template-columns: 1fr; gap: $space-xs; }
+  .cv-skill-grid { grid-template-columns: 1fr; }
   .contact-callout { padding: $space-md; }
 }
 
