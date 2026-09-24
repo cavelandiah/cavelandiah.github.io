@@ -17,7 +17,10 @@ redirect_from:
   <a href="#skills">Skills</a>
   <a href="#teaching">Teaching</a>
   <a href="#presentations">Presentations</a>
+<<<<<<< HEAD
   <a href="#publications">Publications</a>
+=======
+>>>>>>> updates
   <a href="#awards">Awards</a>
 </nav>
 
@@ -100,15 +103,7 @@ redirect_from:
 * **2017 · Doubice, Czech Republic:** “Study of the Genomic Organization of Ancestral Domains of the Immune System of Basal Chordates,” 15th Bioinformatik Herbstseminar.
 * **2016 · Doubice, Czech Republic:** “Computational Turnover of Genes and Pseudogenes of miRNAs in Tunicate Genomes,” 14th Bioinformatik Herbstseminar.
 
-## Publications
-{: #publications }
-
-{% assign publications = site.publications | sort: "date" | reverse %}
-<ul class="cv-publications">
-{% for post in publications %}
-  {% include publication-cv.html %}
-{% endfor %}
-</ul>
+<!-- Publications are intentionally not generated here until every record in _publications has verified metadata and all template placeholder text has been removed. -->
 
 ## Awards
 {: #awards }

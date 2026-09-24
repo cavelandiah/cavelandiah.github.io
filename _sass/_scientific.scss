@@ -143,6 +143,7 @@
 .publication-card__type { color: $pair-b; font-family: $sans-serif; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .publication-card__authors, .publication-card__venue { color: $ink-muted; font-size: .9rem; }
 
+=======
 .math, mjx-container { font-family: $math-font; }
 
 :focus-visible { outline: 3px solid $accent; outline-offset: 3px; box-shadow: $focus-ring; }
@@ -154,8 +155,6 @@
   .capability-grid, .engagement-steps { grid-template-columns: 1fr; }
   .cv-entry { grid-template-columns: 1fr; gap: $space-xs; }
   .cv-skill-grid { grid-template-columns: 1fr; }
-  .publication-year { grid-template-columns: 1fr; }
-  .publication-year > h2 { grid-row: auto; margin-bottom: $space-md; }
   .contact-callout { padding: $space-md; }
 }
 
