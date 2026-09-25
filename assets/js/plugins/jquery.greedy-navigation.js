@@ -11,11 +11,9 @@ var $vlinks = $('#site-nav .visible-links');
 var $hlinks = $('#site-nav .hidden-links');
 var $identity = $('.masthead__identity');
 
-var breaks = [];
+var navBreakPoint = 0;
 
-function closeMenu(restoreFocus) {
-  var focusWasInMenu = $.contains($hlinks[0], document.activeElement);
-
+function closeMenu() {
   $hlinks.addClass('hidden');
   $btn.removeClass('close')
     .attr('aria-expanded', 'false')
@@ -37,16 +35,15 @@ function visibleLinksWidth() {
 }
 
 function updateNav() {
-  var focusWasInMenu = $.contains($hlinks[0], document.activeElement);
+  var isCollapsed = $hlinks.children().length > 0;
 
-  // Rebuild from a known state so repeated viewport changes cannot leave stale
-  // breakpoints or navigation items in the wrong order.
-  closeMenu(false);
-  while($hlinks.children().length) {
-    $hlinks.children().first().appendTo($vlinks);
+  // Restore every menu item together once the complete navigation fits again.
+  if(isCollapsed && $nav.width() >= navBreakPoint) {
+    $hlinks.children().appendTo($vlinks);
+    $btn.addClass('hidden').attr('count', 0);
+    closeMenu();
+    isCollapsed = false;
   }
-  breaks = [];
-  $btn.addClass('hidden');
 
   var availableSpace = $nav.width();
 
@@ -88,33 +85,9 @@ if(window.ResizeObserver) {
 }
 
 $btn.on('click', function() {
-  var opening = $hlinks.hasClass('hidden');
-
-  if(opening) {
-    $hlinks.removeClass('hidden');
-    $btn.addClass('close')
-      .attr('aria-expanded', 'true')
-      .attr('aria-label', 'Close navigation menu');
-  } else {
-    closeMenu(false);
-  }
-});
-
-$hlinks.on('click', 'a', function() {
-  closeMenu(false);
-});
-
-$(document).on('keydown', function(event) {
-  if(event.key === 'Escape' && !$hlinks.hasClass('hidden')) {
-    event.preventDefault();
-    closeMenu(true);
-  }
-});
-
-$(document).on('click', function(event) {
-  if(!$nav.is(event.target) && $nav.has(event.target).length === 0) {
-    closeMenu(false);
-  }
+  $hlinks.toggleClass('hidden');
+  $(this).toggleClass('close');
+  $(this).attr('aria-expanded', !$hlinks.hasClass('hidden'));
 });
 
 updateNav();

@@ -186,11 +186,6 @@
 
 .greedy-nav {
   position: relative;
-  display: flex;
-  flex: 1 1 auto;
-  align-items: center;
-  justify-content: flex-end;
-  height: 100%;
   min-width: 0;
   background: $background-color;
 
@@ -371,11 +366,15 @@
 }
 
 @media (max-width: 30em) {
-  .masthead__menu { gap: $space-sm; }
+  .masthead__menu-item--lg {
+    padding-right: 0;
 
-  .masthead__identity { max-width: calc(100vw - 8rem); }
-
-  .greedy-nav a { margin-right: $space-sm; margin-left: $space-sm; }
+    a {
+      max-width: calc(100vw - 7rem);
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
 }
 
 
