@@ -93,26 +93,26 @@ $ink                        : #172b35;
 $ink-muted                  : #50636b;
 $paper                      : #fbfcfa;
 $surface                    : #f1f6f3;
-$pair-a                     : #087f75;
+$pair-a                     : #077970;
 $pair-b                     : #6356a5;
 $accent                     : #c73e2d;
-$gray                       : #68777d;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
-$light-gray                 : mix(#fff, $gray, 50%);
-$lighter-gray               : mix(#fff, $gray, 90%);
+$gray                       : $ink-muted;
+$dark-gray                  : $ink;
+$darker-gray                : $ink;
+$light-gray                 : $surface;
+$lighter-gray               : $paper;
 
 $body-color                 : $paper;
 $background-color           : $paper;
-$code-background-color      : #eef4f1;
-$code-background-color-dark : $light-gray;
+$code-background-color      : $surface;
+$code-background-color-dark : $surface;
 $text-color                 : $ink;
-$border-color               : #cbd8d3;
+$border-color               : mix($ink-muted, $surface, 24%);
 
 $primary-color              : $pair-a;
-$success-color              : #62c462;
-$warning-color              : #f89406;
-$danger-color               : #ee5f5b;
+$success-color              : $pair-a;
+$warning-color              : $accent;
+$danger-color               : $accent;
 $info-color                 : $pair-b;
 
 /* brands */
@@ -139,11 +139,11 @@ $xing-color                 : #006567;
 
 
 /* links */
-$link-color                 : #086c69;
+$link-color                 : $pair-a;
 $link-color-hover           : mix(#000, $link-color, 25%);
-$link-color-visited         : mix(#fff, $link-color, 25%);
+$link-color-visited         : $pair-b;
 $masthead-link-color        : $ink;
-$masthead-link-color-hover  : mix(#000, $primary-color, 25%);
+$masthead-link-color-hover  : $pair-a;
 
 
 /*
@@ -201,7 +201,7 @@ $susy: (
    ========================================================================== */
 
 $surface-page               : $paper;
-$surface-elevated           : #fff;
+$surface-elevated           : $paper;
 $border-subtle              : $border-color;
 $border-strong              : mix($ink, $border-color, 38%);
 $radius-small               : 6px;

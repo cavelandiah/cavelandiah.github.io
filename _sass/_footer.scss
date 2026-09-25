@@ -15,7 +15,7 @@
   height: auto;
   /* sticky footer fix end */
   margin-top: $space-lg;
-  color: $surface;
+  color: $paper;
   -webkit-animation: intro 0.3s both;
           animation: intro 0.3s both;
   -webkit-animation-delay: 0.45s;
@@ -54,7 +54,7 @@
   .fab,
   .far,
   .fal {
-    color: mix($surface-elevated, $gray, 25%);
+    color: $surface;
   }
 }
 

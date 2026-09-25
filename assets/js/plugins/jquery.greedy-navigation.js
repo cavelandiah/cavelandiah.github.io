@@ -29,7 +29,9 @@ function closeMenu(restoreFocus) {
 function visibleLinksWidth() {
   var width = 0;
   $vlinks.children().each(function() {
-    width += $(this).outerWidth(true);
+    // The spacing belongs to the nested anchor, so measuring the list item
+    // alone under-counts the width and makes the overflow control appear late.
+    width += $(this).find('a').outerWidth(true);
   });
   return width;
 }
@@ -49,15 +51,16 @@ function updateNav() {
   var availableSpace = $nav.width();
 
   // The visible list is overflowing the nav
-  if(visibleLinksWidth() > availableSpace && $vlinks.children().length > 1) {
+  if(visibleLinksWidth() > availableSpace && $vlinks.children().length) {
 
     $btn.removeClass('hidden');
     availableSpace = $nav.width() - $btn.outerWidth(true);
 
-    while(visibleLinksWidth() > availableSpace && $vlinks.children().length > 1) {
+    while(visibleLinksWidth() > availableSpace && $vlinks.children().length) {
       breaks.push(visibleLinksWidth());
 
-      // Always leave at least one primary link visible.
+      // On narrow viewports every item may move into the overflow menu. This
+      // keeps the masthead fluid instead of forcing one link into a fixed row.
       $vlinks.children().last().prependTo($hlinks);
     }
   }
@@ -71,9 +74,18 @@ function updateNav() {
 
 // Window listeners
 
-$(window).resize(function() {
-  updateNav();
-});
+var resizeFrame;
+
+function requestNavUpdate() {
+  window.cancelAnimationFrame(resizeFrame);
+  resizeFrame = window.requestAnimationFrame(updateNav);
+}
+
+$(window).resize(requestNavUpdate);
+
+if(window.ResizeObserver) {
+  new ResizeObserver(requestNavUpdate).observe($nav[0]);
+}
 
 $btn.on('click', function() {
   var opening = $hlinks.hasClass('hidden');
