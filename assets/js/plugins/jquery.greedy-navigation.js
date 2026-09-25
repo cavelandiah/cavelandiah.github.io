@@ -15,7 +15,23 @@ var navBreakPoint = 0;
 
 function closeMenu() {
   $hlinks.addClass('hidden');
-  $btn.removeClass('close').attr('aria-expanded', 'false');
+  $btn.removeClass('close')
+    .attr('aria-expanded', 'false')
+    .attr('aria-label', 'Open navigation menu');
+
+  if(restoreFocus && focusWasInMenu && !$btn.hasClass('hidden')) {
+    $btn.focus();
+  }
+}
+
+function visibleLinksWidth() {
+  var width = 0;
+  $vlinks.children().each(function() {
+    // The spacing belongs to the nested anchor, so measuring the list item
+    // alone under-counts the width and makes the overflow control appear late.
+    width += $(this).find('a').outerWidth(true);
+  });
+  return width;
 }
 
 function updateNav() {
@@ -29,20 +45,44 @@ function updateNav() {
     isCollapsed = false;
   }
 
-  // When the full navigation no longer fits, move every page link into the
-  // dropdown at once. The first item is the site identity and always remains.
-  if(!isCollapsed && $vlinks.width() > $nav.width() && $vlinks.children().length > 1) {
-    navBreakPoint = $vlinks.width();
-    $vlinks.children().not(':first').appendTo($hlinks);
-    $btn.removeClass('hidden').attr('count', $hlinks.children().length);
+  var availableSpace = $nav.width();
+
+  // The visible list is overflowing the nav
+  if(visibleLinksWidth() > availableSpace && $vlinks.children().length) {
+
+    $btn.removeClass('hidden');
+    availableSpace = $nav.width() - $btn.outerWidth(true);
+
+    while(visibleLinksWidth() > availableSpace && $vlinks.children().length) {
+      breaks.push(visibleLinksWidth());
+
+      // On narrow viewports every item may move into the overflow menu. This
+      // keeps the masthead fluid instead of forcing one link into a fixed row.
+      $vlinks.children().last().prependTo($hlinks);
+    }
+  }
+
+  $btn.attr('count', breaks.length);
+
+  if(focusWasInMenu) {
+    ($btn.hasClass('hidden') ? $identity : $btn).focus();
   }
 }
 
 // Window listeners
 
-$(window).resize(function() {
-  updateNav();
-});
+var resizeFrame;
+
+function requestNavUpdate() {
+  window.cancelAnimationFrame(resizeFrame);
+  resizeFrame = window.requestAnimationFrame(updateNav);
+}
+
+$(window).resize(requestNavUpdate);
+
+if(window.ResizeObserver) {
+  new ResizeObserver(requestNavUpdate).observe($nav[0]);
+}
 
 $btn.on('click', function() {
   $hlinks.toggleClass('hidden');

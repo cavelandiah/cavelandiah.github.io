@@ -247,8 +247,10 @@
   }
 
   .visible-links {
-    display: table;
-    max-width: 100%;
+    display: flex;
+    flex: 0 1 auto;
+    align-items: center;
+    min-width: 0;
 
     li {
       display: block;
@@ -296,12 +298,15 @@
     position: absolute;
     top: 100%;
     right: 0;
-    margin-top: 15px;
-    padding: 5px;
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(#000, 0.25);
+    width: max-content;
+    min-width: 12rem;
+    max-width: calc(100vw - 2rem);
+    margin-top: $space-xs;
+    padding: $space-xs 0;
+    border: 1px solid $border-strong;
+    border-radius: $radius-small;
+    background: $paper;
+    box-shadow: $elevation-floating;
     z-index: 20;
 
     a {
@@ -311,6 +316,7 @@
       min-height: 44px;
       padding: $space-sm $space-md;
       font-size: $type-size-5;
+      white-space: normal;
 
       &:hover {
         color: $masthead-link-color-hover;
