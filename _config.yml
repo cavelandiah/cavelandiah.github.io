@@ -85,7 +85,7 @@ author:
   avatar           : "profile.png"
   bio              : "Computational RNA biologist working across comparative genomics and reproducible bioinformatics."
   location         : "Vienna, Austria"
-  employer         : # TODO: Confirm the researcher's current institution before populating this field.
+  employer         : "Medical University of Vienna / University of Vienna" # TODO: Confirm the researcher's current institution before populating this field.
   pubmed           : "https://pubmed.ncbi.nlm.nih.gov/?term=Velandia-Huerto%2C+CA%5BAuthor%5D"
   googlescholar    : "https://scholar.google.com/citations?user=oA6y0BsAAAAJ&hl=en" # TODO: Verify this profile URL is current.
   email            : "cavelandiah@tbi.univie.ac.at"
@@ -107,7 +107,7 @@ author:
   orcid            : "https://orcid.org/0000-0002-1370-3560"
   pinterest        :
   soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
+  stackoverflow    : "https://stackoverflow.com/users/1487449/cristian-velandia" # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
   twitter          : 
