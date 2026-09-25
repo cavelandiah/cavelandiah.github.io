@@ -3,6 +3,7 @@
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
+      <a class="masthead__identity" href="{{ base_path }}/"{% if page.url == "/" %} aria-current="page"{% endif %}>{{ site.name | default: site.title }}</a>
       <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
         <button class="hidden" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav-menu"><span class="navicon" aria-hidden="true"></span></button>
         <ul class="visible-links">
@@ -13,7 +14,7 @@
               {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}"{% if link.url == page.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
           {% endfor %}
         </ul>
         <ul id="site-nav-menu" class="hidden-links hidden"></ul>

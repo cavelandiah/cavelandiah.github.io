@@ -9,26 +9,32 @@
 .btn {
   /* default button */
   display: inline-block;
-  margin-bottom: 0.25em;
-  padding: 0.5em 1em;
-  color: #fff !important;
+  margin-bottom: $space-2xs;
+  padding: $space-sm $space-md;
+  color: $paper !important;
   font-family: $sans-serif;
   font-size: $type-size-6;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  background-color: $accent;
-  border: 2px solid $accent !important;
-  border-radius: $border-radius;
+  background-color: $pair-a;
+  border: 2px solid $pair-a !important;
+  border-radius: $radius-small;
   cursor: pointer;
+  transition: background-color $transition-standard, border-color $transition-standard, box-shadow $transition-standard, text-decoration-color $transition-standard;
 
   &:hover {
-    background-color: mix(#000, $accent, 18%);
-    border-color: mix(#000, $accent, 18%) !important;
+    background-color: mix(#000, $pair-a, 18%);
+    border-color: mix(#000, $pair-a, 18%) !important;
+    text-decoration: underline;
+    text-underline-offset: $space-2xs;
   }
 
+  &:focus-visible { outline: 3px solid $accent; outline-offset: $space-2xs; box-shadow: $focus-treatment; }
+  &:active { box-shadow: inset 0 0 0 2px rgba($ink, .28); text-decoration-thickness: 2px; }
+
   .icon {
-    margin-right: 0.5em;
+    margin-right: $space-sm;
   }
 
   .icon + .hidden {
@@ -42,27 +48,28 @@
     width: 100%;
 
     + .btn--block {
-      margin-top: 0.25em;
+      margin-top: $space-2xs;
     }
   }
 
   /* for dark backgrounds */
 
   &--inverse {
-    color: $gray !important;
-    border: 1px solid $light-gray !important; /* override*/
-    background-color: #fff;
+    color: $ink !important;
+    border: 1px solid $ink-muted !important; /* override*/
+    background-color: $paper;
 
     &:hover {
-      color: #fff !important;
-      border-color: $gray;
+      color: $paper !important;
+      background-color: $ink;
+      border-color: $ink !important;
     }
   }
 
   /* light outline */
 
   &--light-outline {
-    border: 1px solid #fff !important; /* override*/
+    border: 1px solid $paper !important; /* override*/
     background-color: transparent;
   }
 
@@ -70,9 +77,11 @@
 
   &--info {
     background-color: $info-color;
+    border-color: $info-color !important;
 
     &:hover {
       background-color: mix(#000, $info-color, 20%);
+      border-color: mix(#000, $info-color, 20%) !important;
     }
   }
 
@@ -80,9 +89,11 @@
 
   &--warning {
     background-color: $warning-color;
+    border-color: $warning-color !important;
 
     &:hover {
       background-color: mix(#000, $warning-color, 20%);
+      border-color: mix(#000, $warning-color, 20%) !important;
     }
   }
 
@@ -90,9 +101,11 @@
 
   &--success {
     background-color: $success-color;
+    border-color: $success-color !important;
 
     &:hover {
       background-color: mix(#000, $success-color, 20%);
+      border-color: mix(#000, $success-color, 20%) !important;
     }
   }
 
@@ -100,9 +113,11 @@
 
   &--danger {
     background-color: $danger-color;
+    border-color: $danger-color !important;
 
     &:hover {
       background-color: mix(#000, $danger-color, 20%);
+      border-color: mix(#000, $danger-color, 20%) !important;
     }
   }
 
@@ -119,17 +134,19 @@
   /* social buttons */
 
   $social:
-  (facebook, $facebook-color),
-  (twitter, $twitter-color),
-  (google-plus, $google-plus-color),
-  (linkedin, $linkedin-color);
+  (facebook, $pair-a),
+  (twitter, $pair-a),
+  (google-plus, $pair-a),
+  (linkedin, $pair-a);
 
   @each $socialnetwork, $color in $social {
     &--#{$socialnetwork} {
       background-color: $color;
+      border-color: $color !important;
 
       &:hover {
         background-color: mix(#000, $color, 20%);
+        border-color: mix(#000, $color, 20%) !important;
       }
     }
   }
