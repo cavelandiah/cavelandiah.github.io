@@ -11,61 +11,30 @@ var $vlinks = $('#site-nav .visible-links');
 var $hlinks = $('#site-nav .hidden-links');
 var $identity = $('.masthead__identity');
 
-var breaks = [];
+var navBreakPoint = 0;
 
-function closeMenu(restoreFocus) {
-  var focusWasInMenu = $.contains($hlinks[0], document.activeElement);
-
+function closeMenu() {
   $hlinks.addClass('hidden');
-  $btn.removeClass('close')
-    .attr('aria-expanded', 'false')
-    .attr('aria-label', 'Open navigation menu');
-
-  if(restoreFocus && focusWasInMenu && !$btn.hasClass('hidden')) {
-    $btn.focus();
-  }
-}
-
-function visibleLinksWidth() {
-  var width = 0;
-  $vlinks.children().each(function() {
-    width += $(this).outerWidth(true);
-  });
-  return width;
+  $btn.removeClass('close').attr('aria-expanded', 'false');
 }
 
 function updateNav() {
-  var focusWasInMenu = $.contains($hlinks[0], document.activeElement);
+  var isCollapsed = $hlinks.children().length > 0;
 
-  // Rebuild from a known state so repeated viewport changes cannot leave stale
-  // breakpoints or navigation items in the wrong order.
-  closeMenu(false);
-  while($hlinks.children().length) {
-    $hlinks.children().first().appendTo($vlinks);
-  }
-  breaks = [];
-  $btn.addClass('hidden');
-
-  var availableSpace = $nav.width();
-
-  // The visible list is overflowing the nav
-  if(visibleLinksWidth() > availableSpace && $vlinks.children().length > 1) {
-
-    $btn.removeClass('hidden');
-    availableSpace = $nav.width() - $btn.outerWidth(true);
-
-    while(visibleLinksWidth() > availableSpace && $vlinks.children().length > 1) {
-      breaks.push(visibleLinksWidth());
-
-      // Always leave at least one primary link visible.
-      $vlinks.children().last().prependTo($hlinks);
-    }
+  // Restore every menu item together once the complete navigation fits again.
+  if(isCollapsed && $nav.width() >= navBreakPoint) {
+    $hlinks.children().appendTo($vlinks);
+    $btn.addClass('hidden').attr('count', 0);
+    closeMenu();
+    isCollapsed = false;
   }
 
-  $btn.attr('count', breaks.length);
-
-  if(focusWasInMenu) {
-    ($btn.hasClass('hidden') ? $identity : $btn).focus();
+  // When the full navigation no longer fits, move every page link into the
+  // dropdown at once. The first item is the site identity and always remains.
+  if(!isCollapsed && $vlinks.width() > $nav.width() && $vlinks.children().length > 1) {
+    navBreakPoint = $vlinks.width();
+    $vlinks.children().not(':first').appendTo($hlinks);
+    $btn.removeClass('hidden').attr('count', $hlinks.children().length);
   }
 }
 
@@ -76,33 +45,9 @@ $(window).resize(function() {
 });
 
 $btn.on('click', function() {
-  var opening = $hlinks.hasClass('hidden');
-
-  if(opening) {
-    $hlinks.removeClass('hidden');
-    $btn.addClass('close')
-      .attr('aria-expanded', 'true')
-      .attr('aria-label', 'Close navigation menu');
-  } else {
-    closeMenu(false);
-  }
-});
-
-$hlinks.on('click', 'a', function() {
-  closeMenu(false);
-});
-
-$(document).on('keydown', function(event) {
-  if(event.key === 'Escape' && !$hlinks.hasClass('hidden')) {
-    event.preventDefault();
-    closeMenu(true);
-  }
-});
-
-$(document).on('click', function(event) {
-  if(!$nav.is(event.target) && $nav.has(event.target).length === 0) {
-    closeMenu(false);
-  }
+  $hlinks.toggleClass('hidden');
+  $(this).toggleClass('close');
+  $(this).attr('aria-expanded', !$hlinks.hasClass('hidden'));
 });
 
 updateNav();
