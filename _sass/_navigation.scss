@@ -190,7 +190,6 @@
   flex: 1 1 auto;
   align-items: center;
   justify-content: flex-end;
-  height: 100%;
   min-width: 0;
   background: $background-color;
 
@@ -253,9 +252,9 @@
 
   .visible-links {
     display: flex;
+    flex: 0 1 auto;
     align-items: center;
-    width: max-content;
-    max-width: none;
+    min-width: 0;
 
     li {
       display: block;
@@ -303,7 +302,9 @@
     position: absolute;
     top: 100%;
     right: 0;
-    width: unquote("min(18rem, calc(100vw - 2rem))");
+    width: max-content;
+    min-width: 12rem;
+    max-width: calc(100vw - 2rem);
     margin-top: $space-xs;
     padding: $space-xs 0;
     border: 1px solid $border-strong;
@@ -319,6 +320,7 @@
       min-height: 44px;
       padding: $space-sm $space-md;
       font-size: $type-size-5;
+      white-space: normal;
 
       &:hover {
         color: $masthead-link-color-hover;
@@ -368,11 +370,15 @@
 }
 
 @media (max-width: 30em) {
-  .masthead__menu { gap: $space-sm; }
+  .masthead__menu-item--lg {
+    padding-right: 0;
 
-  .masthead__identity { max-width: calc(100vw - 8rem); }
-
-  .greedy-nav a { margin-right: $space-sm; margin-left: $space-sm; }
+    a {
+      max-width: calc(100vw - 7rem);
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
 }
 
 

@@ -1,16 +1,19 @@
 # Main visitor navigation
 main:
+  - title: "About me"
+    url: /
+
+  - title: "Industry collaboration"
+    url: /industry/
+
+  - title: "Email me"
+    url: mailto:cavelandiah@tbi.univie.ac.at
+
   - title: "Talks"
     url: /talks/
 
-  - title: "Posters"
-    url: /posters/
-
   - title: "Publications"
     url: /publications/
-
-  - title: "Industry"
-    url: /industry/
 
   - title: "Writing"
     url: /year-archive/

@@ -14,7 +14,7 @@ var $identity = $('.masthead__identity');
 var breaks = [];
 
 function closeMenu(restoreFocus) {
-  var focusWasInMenu = $.contains($hlinks[0], document.activeElement);
+  var focusWasInMenu = $hlinks.find(document.activeElement).length > 0;
 
   $hlinks.addClass('hidden');
   $btn.removeClass('close')
@@ -29,37 +29,44 @@ function closeMenu(restoreFocus) {
 function visibleLinksWidth() {
   var width = 0;
   $vlinks.children().each(function() {
-    width += $(this).outerWidth(true);
+    // The spacing belongs to the nested anchor, so measuring the list item
+    // alone under-counts the width and makes the overflow control appear late.
+    width += $(this).find('a').outerWidth(true);
   });
   return width;
 }
 
 function updateNav() {
-  var focusWasInMenu = $.contains($hlinks[0], document.activeElement);
+  var focusWasInMenu = $hlinks.find(document.activeElement).length > 0;
+  var availableSpace = $nav.width() - ($hlinks.children().length ? $btn.outerWidth(true) : 0);
 
-  // Rebuild from a known state so repeated viewport changes cannot leave stale
-  // breakpoints or navigation items in the wrong order.
-  closeMenu(false);
-  while($hlinks.children().length) {
+  // Return links from the start of the overflow list so their source order is
+  // preserved as space becomes available.
+  while(breaks.length && availableSpace > breaks[breaks.length - 1]) {
     $hlinks.children().first().appendTo($vlinks);
+    breaks.pop();
   }
-  breaks = [];
-  $btn.addClass('hidden');
-
-  var availableSpace = $nav.width();
 
   // The visible list is overflowing the nav
-  if(visibleLinksWidth() > availableSpace && $vlinks.children().length > 1) {
+  if(visibleLinksWidth() > availableSpace && $vlinks.children().length) {
 
     $btn.removeClass('hidden');
     availableSpace = $nav.width() - $btn.outerWidth(true);
 
-    while(visibleLinksWidth() > availableSpace && $vlinks.children().length > 1) {
+    while(visibleLinksWidth() > availableSpace && $vlinks.children().length) {
       breaks.push(visibleLinksWidth());
 
-      // Always leave at least one primary link visible.
+      // On narrow viewports every item may move into the overflow menu. This
+      // keeps the masthead fluid instead of forcing one link into a fixed row.
       $vlinks.children().last().prependTo($hlinks);
     }
+  }
+
+  if($hlinks.children().length) {
+    $btn.removeClass('hidden');
+  } else {
+    $btn.addClass('hidden');
+    closeMenu(false);
   }
 
   $btn.attr('count', breaks.length);
@@ -71,14 +78,21 @@ function updateNav() {
 
 // Window listeners
 
-$(window).resize(function() {
-  updateNav();
-});
+var resizeFrame;
+
+function requestNavUpdate() {
+  window.cancelAnimationFrame(resizeFrame);
+  resizeFrame = window.requestAnimationFrame(updateNav);
+}
+
+$(window).resize(requestNavUpdate);
+
+if(window.ResizeObserver) {
+  new ResizeObserver(requestNavUpdate).observe($nav[0]);
+}
 
 $btn.on('click', function() {
-  var opening = $hlinks.hasClass('hidden');
-
-  if(opening) {
+  if($hlinks.hasClass('hidden')) {
     $hlinks.removeClass('hidden');
     $btn.addClass('close')
       .attr('aria-expanded', 'true')
