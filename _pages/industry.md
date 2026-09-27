@@ -11,6 +11,8 @@ author_profile: true
 
 Computational RNA biology can turn complex sequence, structure, and evolutionary evidence into analyses that research and development teams can inspect, test, and reuse. I bring an evidence-led approach to problems where dependable annotation, comparative context, or a tailored computational method can reduce uncertainty and clarify the next experiment.
 
+<p><a class="btn btn--primary" href="mailto:{{ site.author.email }}?subject={{ 'Industry collaboration inquiry' | url_encode }}">Discuss a project</a></p>
+
 <!-- Personal information needed: identify preferred industry sectors (for example, biotechnology, diagnostics, therapeutics, or agrigenomics). -->
 <!-- Personal information needed: add any previous industry collaborations that may be named publicly; do not add confidential client details. -->
 
@@ -62,6 +64,6 @@ Representative projects include:
 
 <aside class="contact-callout" aria-labelledby="industry-contact-title">
   <h2 id="industry-contact-title">Discuss a project</h2>
-  <p>If your team has an RNA or comparative-genomics question, send a short description of the challenge, the data available, and the decision the work should support.</p>
-  <a class="btn btn--primary" href="mailto:{{ site.author.email }}">Contact me</a>
+  <p>In your first message, include the scientific question, available data, and desired decision or outcome.</p>
+  <a class="btn btn--primary" href="mailto:{{ site.author.email }}?subject={{ 'Industry collaboration inquiry' | url_encode }}">Discuss a project</a>
 </aside>
