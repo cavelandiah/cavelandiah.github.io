@@ -44,7 +44,7 @@ redirect_from:
     <h2 id="position-title">From genomes to models</h2>
   </div>
   <div class="about-position__copy">
-    <p class="about-section__lead">¡Hola! I am a bioinformatician studying the regulatory landscape shaped by non-coding RNA genomes. My work joins an interest in algorithm design with practical experience in comparative genomics—from annotating ncRNAs in invasive tunicates to studying concerted tRNA evolution in primates and fruit flies.</p>
+    <p class="about-section__lead">¡Hola! I am a postdoctoral researcher at the Medical University of Vienna and the University of Vienna, where I am the principal bioinformatician in the SFB F80 RNA-DECO consortium. I study the regulatory landscape shaped by non-coding RNAs, combining algorithm design with comparative genomics—from annotating ncRNAs in invasive tunicates to studying concerted tRNA evolution in primates and fruit flies.</p>
     <p>I completed an MSc in Bioinformatics with Dra. Clara Bermúdez (Universidad Nacional de Colombia) and Dr. Federico Brown (University of São Paulo), studying microRNA evolution in tunicates. Collaboration with Dr. Peter F. Stadler (Leipzig University) led to a PhD in Computer Science focused on assessing metazoan miRNA annotations and tracing their evolution across chordates.</p>
   </div>
 </section>
@@ -66,7 +66,7 @@ redirect_from:
     <p class="about-section__index" aria-hidden="true">03</p>
     <h2 id="approach-title">Evidence by design</h2>
     <p class="about-section__lead">My doctoral work expanded into computational detection of ncRNAs, especially in tunicates, and into probabilistic predictive models.</p>
-    <p>I created <strong>miRNAture</strong>, a pipeline that evaluates bona fide miRNA annotations by combining homology with structural features. The aim is not simply to produce more predictions, but to make every prediction explainable, comparable, and reusable.</p>
+    <p>I created <a href="https://github.com/Bierinformatik/miRNAture"><strong>miRNAture</strong></a>, an <a href="https://doi.org/10.3390/genes12030348">open-source pipeline</a> that evaluates bona fide miRNA annotations by combining homology with structural features. The aim is not simply to produce more predictions, but to make every prediction explainable, comparable, and reusable.</p>
   </div>
   <figure class="scientific-figure">
     <img src="{{ '/images/rna-evidence-network.svg' | relative_url }}" alt="RNA sequence and hairpin structure connected through evolutionary evidence to a validated annotation.">
@@ -90,11 +90,6 @@ redirect_from:
   <p class="about-work__more"><a href="{{ '/publications/' | relative_url }}">Browse all publications <span aria-hidden="true">→</span></a></p>
 </section>
 
-<!-- Current-project details needed: supply the project title, research question, status or timeframe, and a public project page for each project that may be named here. -->
-<!-- Current-affiliation details needed: confirm the institution, group, position title, and dates that should appear on this page. -->
-<!-- Funding details needed: supply the funder, grant or consortium name, grant number, funding period, and a public award page for any current support that may be acknowledged here. -->
-<!-- Software-link details needed: supply the canonical repository and documentation or release URL for miRNAture and any other maintained research software. -->
-
 <section class="about-section about-questions" aria-labelledby="questions-title">
   <div class="about-section__heading">
     <p class="about-section__index" aria-hidden="true">05</p>
@@ -107,14 +102,11 @@ redirect_from:
   </ol>
 </section>
 
-<!-- Collaboration-preference details needed: state the academic questions, methods, organisms, project stages, and mentoring or co-supervision opportunities currently sought. -->
-<!-- Collaboration-preference details needed: state current industry availability, preferred engagement types and sectors, timing constraints, and any data, publication, confidentiality, or intellectual-property requirements. -->
-
 <aside class="contact-callout" aria-labelledby="about-contact-title">
   <div>
     <p class="about-section__index" aria-hidden="true">06</p>
     <h2 id="about-contact-title">Work with me</h2>
-    <p>Have a research question or collaboration in mind? I welcome conversations about academic research and industry collaboration.</p>
+    <p>I welcome academic collaborations on RNA structure, modification, annotation, and evolution, as well as scoped industry projects in RNA analysis, comparative genomics, and reproducible workflows. In your first message, please outline the scientific question, the data available, and the outcome you need.</p>
   </div>
   <div class="contact-callout__actions">
     <a class="btn btn--primary" href="mailto:{{ site.author.email }}">Discuss a research collaboration</a>
