@@ -15,8 +15,8 @@ redirect_from:
     <h1 class="science-hero__title" id="hero-title">Finding the signals that make RNA regulatory</h1>
     <p class="science-hero__lede">I combine sequence, structure, and evolution to distinguish functional non-coding RNAs from genomic noise through reproducible models.</p>
     <div class="science-hero__actions">
-      <a class="science-hero__action science-hero__action--primary" href="{{ '/publications/' | relative_url }}">Explore my research</a>
-      <a class="science-hero__action science-hero__action--secondary" href="{{ '/industry/' | relative_url }}">Industry collaborations</a>
+      <a class="science-hero__action science-hero__action--primary" href="{{ '/industry/' | relative_url }}">Industry collaboration</a>
+      <a class="science-hero__action science-hero__action--secondary" href="{{ '/publications/' | relative_url }}">Explore my research</a>
     </div>
   </div>
   <svg class="science-hero__art" viewBox="0 0 640 390" role="img" aria-labelledby="about-rna-evidence-title about-rna-evidence-desc">
