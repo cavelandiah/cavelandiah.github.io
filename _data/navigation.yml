@@ -1,5 +1,8 @@
 # Main visitor navigation
 main:
+  - title: "About me"
+    url: /
+
   - title: "Talks"
     url: /talks/
 

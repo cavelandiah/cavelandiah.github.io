@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Computational RNA biology"
+title: "Cristian Velandia — RNA evolution and bioinformatics"
 excerpt: "Research at the intersection of RNA evolution, algorithms, and reproducible genomics."
 author_profile: true
 science_hero: true
