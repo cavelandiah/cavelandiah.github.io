@@ -43,6 +43,10 @@ Computational RNA biology can turn complex sequence, structure, and evolutionary
 
 ## How an engagement works
 
+<figure class="scientific-figure">
+  <img src="{{ '/images/industry-engagement-workflow.png' | relative_url }}" alt="Workflow from a scientific question through experimental strategy and tailored computational analyses to molecular insight, with refinement and validation loops.">
+</figure>
+
 <ol class="engagement-steps">
   <li><strong>Initial discussion</strong><span>Clarify the scientific question, available data, decision context, and practical constraints.</span></li>
   <li><strong>Scoped feasibility assessment</strong><span>Review inputs, define success criteria, identify risks, and propose a focused plan.</span></li>
