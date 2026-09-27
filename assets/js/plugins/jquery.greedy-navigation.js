@@ -11,9 +11,11 @@ var $vlinks = $('#site-nav .visible-links');
 var $hlinks = $('#site-nav .hidden-links');
 var $identity = $('.masthead__identity');
 
-var navBreakPoint = 0;
+var breaks = [];
 
-function closeMenu() {
+function closeMenu(restoreFocus) {
+  var focusWasInMenu = $hlinks.find(document.activeElement).length > 0;
+
   $hlinks.addClass('hidden');
   $btn.removeClass('close')
     .attr('aria-expanded', 'false')
@@ -35,17 +37,15 @@ function visibleLinksWidth() {
 }
 
 function updateNav() {
-  var isCollapsed = $hlinks.children().length > 0;
+  var focusWasInMenu = $hlinks.find(document.activeElement).length > 0;
+  var availableSpace = $nav.width() - ($hlinks.children().length ? $btn.outerWidth(true) : 0);
 
-  // Restore every menu item together once the complete navigation fits again.
-  if(isCollapsed && $nav.width() >= navBreakPoint) {
-    $hlinks.children().appendTo($vlinks);
-    $btn.addClass('hidden').attr('count', 0);
-    closeMenu();
-    isCollapsed = false;
+  // Return links from the start of the overflow list so their source order is
+  // preserved as space becomes available.
+  while(breaks.length && availableSpace > breaks[breaks.length - 1]) {
+    $hlinks.children().first().appendTo($vlinks);
+    breaks.pop();
   }
-
-  var availableSpace = $nav.width();
 
   // The visible list is overflowing the nav
   if(visibleLinksWidth() > availableSpace && $vlinks.children().length) {
@@ -60,6 +60,13 @@ function updateNav() {
       // keeps the masthead fluid instead of forcing one link into a fixed row.
       $vlinks.children().last().prependTo($hlinks);
     }
+  }
+
+  if($hlinks.children().length) {
+    $btn.removeClass('hidden');
+  } else {
+    $btn.addClass('hidden');
+    closeMenu(false);
   }
 
   $btn.attr('count', breaks.length);
@@ -85,9 +92,31 @@ if(window.ResizeObserver) {
 }
 
 $btn.on('click', function() {
-  $hlinks.toggleClass('hidden');
-  $(this).toggleClass('close');
-  $(this).attr('aria-expanded', !$hlinks.hasClass('hidden'));
+  if($hlinks.hasClass('hidden')) {
+    $hlinks.removeClass('hidden');
+    $btn.addClass('close')
+      .attr('aria-expanded', 'true')
+      .attr('aria-label', 'Close navigation menu');
+  } else {
+    closeMenu(false);
+  }
+});
+
+$hlinks.on('click', 'a', function() {
+  closeMenu(false);
+});
+
+$(document).on('keydown', function(event) {
+  if(event.key === 'Escape' && !$hlinks.hasClass('hidden')) {
+    event.preventDefault();
+    closeMenu(true);
+  }
+});
+
+$(document).on('click', function(event) {
+  if(!$nav.is(event.target) && $nav.has(event.target).length === 0) {
+    closeMenu(false);
+  }
 });
 
 updateNav();
