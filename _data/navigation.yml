@@ -3,6 +3,9 @@ main:
   - title: "About me"
     url: /
 
+  - title: "Industry collaboration"
+    url: /industry/
+
   - title: "Talks"
     url: /talks/
 
@@ -11,9 +14,6 @@ main:
 
   - title: "Publications"
     url: /publications/
-
-  - title: "Industry"
-    url: /industry/
 
   - title: "Writing"
     url: /year-archive/
