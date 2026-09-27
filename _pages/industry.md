@@ -13,8 +13,12 @@ Computational RNA biology can turn complex sequence, structure, and evolutionary
 
 <p><a class="btn btn--primary" href="mailto:{{ site.author.email }}?subject={{ 'Industry collaboration inquiry' | url_encode }}">Discuss a project</a></p>
 
-<!-- Personal information needed: identify preferred industry sectors (for example, biotechnology, diagnostics, therapeutics, or agrigenomics). -->
-<!-- Personal information needed: add any previous industry collaborations that may be named publicly; do not add confidential client details. -->
+### Evidence at a glance
+
+- **Ph.D.-level computational biology:** Ph.D. in Computer Science focused on large-scale workflows for studying miRNA evolution. [View the CV]({{ '/cv/' | relative_url }}#education).
+- **Cross-institutional research:** RNA and genomics collaborations spanning universities and research groups in Austria, Germany, Colombia, Brazil, the Netherlands, and the United Kingdom. [View experience and collaborators]({{ '/cv/' | relative_url }}#experience).
+- **Published RNA and genomics work:** peer-reviewed research covers microRNA detection and evolution, ncRNA annotation, tRNA evolution, genome analysis, and RNA structure. [Browse publications]({{ '/publications/' | relative_url }}).
+- **Reproducible pipeline development:** experience building Snakemake, Galaxy, cluster-based, and version-controlled workflows, including the public miRNAture annotation pipeline. [View technical experience]({{ '/cv/' | relative_url }}#skills).
 
 ## Capabilities
 
@@ -39,6 +43,10 @@ Computational RNA biology can turn complex sequence, structure, and evolutionary
 
 ## How an engagement works
 
+<figure class="scientific-figure">
+  <img src="{{ '/images/industry-engagement-workflow.png' | relative_url }}" alt="Workflow from a scientific question through experimental strategy and tailored computational analyses to molecular insight, with refinement and validation loops.">
+</figure>
+
 <ol class="engagement-steps">
   <li><strong>Initial discussion</strong><span>Clarify the scientific question, available data, decision context, and practical constraints.</span></li>
   <li><strong>Scoped feasibility assessment</strong><span>Review inputs, define success criteria, identify risks, and propose a focused plan.</span></li>
@@ -46,8 +54,7 @@ Computational RNA biology can turn complex sequence, structure, and evolutionary
   <li><strong>Documented delivery</strong><span>Provide interpretable outputs, methods, code or workflow materials as agreed, and recommended next steps.</span></li>
 </ol>
 
-<!-- Personal information needed: state current consulting availability, engagement length, and any geographic or scheduling constraints. -->
-<!-- Personal information needed: describe preferred confidentiality, publication, data-handling, and intellectual-property expectations. -->
+I currently welcome initial conversations about academic research and industry collaboration. The preferred first step is a short email outlining the scientific question, the data available, and the decision or outcome the work should support.
 
 ## Good fit
 
@@ -60,7 +67,12 @@ Representative projects include:
 - Testing the feasibility of a bespoke RNA prediction or classification method.
 - Developing an interpretable proof of concept for an internal research question.
 
-<!-- Personal information needed: add representative, non-confidential outcomes or deliverables once they can be verified and shared. -->
+### Representative technical evidence
+
+The following outcomes come from academic and open-source work and are presented as evidence of relevant technical practice, not as commercial client case studies:
+
+- **Reusable microRNA annotation:** developed miRNAture and used it to produce genome-wide canonical microRNA annotations across 23 chordates; a public Galaxy version made the pipeline accessible through a reproducible workflow. [See the related publication]({{ '/publication/2021-02-01-mirnature-computational-detection-of-microrna-candidates' | relative_url }}) and [CV evidence]({{ '/cv/' | relative_url }}#experience).
+- **Genome-scale ncRNA analysis:** produced a comprehensive non-coding RNA annotation for the draft *Didemnum vexillum* genome using homology and genome-wide computational comparisons, contributing to published genome and annotation research. [See the publications]({{ '/publications/' | relative_url }}).
 
 <aside class="contact-callout" aria-labelledby="industry-contact-title">
   <h2 id="industry-contact-title">Discuss a project</h2>
