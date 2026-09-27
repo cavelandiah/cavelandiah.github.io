@@ -6,6 +6,9 @@ main:
   - title: "Industry collaboration"
     url: /industry/
 
+  - title: "Email me"
+    url: mailto:cavelandiah@tbi.univie.ac.at
+
   - title: "Talks"
     url: /talks/
 
