@@ -11,7 +11,7 @@ redirect_from:
 
 <section class="science-hero" aria-labelledby="hero-title">
   <div class="science-hero__copy">
-    <p class="science-hero__eyebrow">Computational RNA biology</p>
+    <p class="science-hero__eyebrow">Computational noncoding RNA biology</p>
     <h1 class="science-hero__title" id="hero-title">Finding the signals that make RNA regulatory</h1>
     <p class="science-hero__lede">I combine sequence, structure, and evolution to distinguish functional non-coding RNAs from genomic noise through reproducible models.</p>
     <div class="science-hero__actions">
@@ -40,12 +40,12 @@ redirect_from:
 
 <section class="about-section about-position" aria-labelledby="position-title">
   <div class="about-section__heading">
-    <p class="about-section__index" aria-hidden="true">01</p>
-    <h2 id="position-title">From genomes to models</h2>
+    <p class="about-section__index" aria-hidden="true"></p>
+    <h2 id="position-title">About me</h2>
   </div>
   <div class="about-position__copy">
-    <p class="about-section__lead">¡Hola! I am a postdoctoral researcher at the Medical University of Vienna and the University of Vienna, where I am the principal bioinformatician in the SFB F80 RNA-DECO consortium. I study the regulatory landscape shaped by non-coding RNAs, combining algorithm design with comparative genomics—from annotating ncRNAs in invasive tunicates to studying concerted tRNA evolution in primates and fruit flies.</p>
-    <p>I completed an MSc in Bioinformatics with Dra. Clara Bermúdez (Universidad Nacional de Colombia) and Dr. Federico Brown (University of São Paulo), studying microRNA evolution in tunicates. Collaboration with Dr. Peter F. Stadler (Leipzig University) led to a PhD in Computer Science focused on assessing metazoan miRNA annotations and tracing their evolution across chordates.</p>
+    <p class="about-section__lead">I am a postdoctoral researcher at the Medical University of Vienna and the University of Vienna, where I am the principal bioinformatician in the SFB F80 RNA-DECO consortium. My research explores how non-coding RNAs evolve, acquire structure, and contribute to gene regulation. I combine algorithm development, comparative genomics, and RNA bioinformatics to study the evolution and conservation of ncRNAs across species, and to develop computational approaches for investigating RNA structure and modification from high-throughput sequencing data.</p>
+    <p>I completed an MSc in Bioinformatics with Dra. Clara Bermúdez (Universidad Nacional de Colombia) and Dr. Federico Brown (University of São Paulo), studying microRNA evolution in tunicates. Collaboration with Dr. Peter F. Stadler (Leipzig University) led to a PhD in Computer Science focused on assessing metazoan miRNA annotations and tracing their evolution across chordates. I am currently working in Ivo Hofacker’s lab, focusing on RNA modifications and their impact on RNA structure.</p>
   </div>
 </section>
 
@@ -76,7 +76,7 @@ redirect_from:
 
 <section class="about-section about-work" aria-labelledby="work-title">
   <div class="about-section__heading">
-    <p class="about-section__index" aria-hidden="true">02</p>
+    <p class="about-section__index" aria-hidden="true"></p>
     <h2 id="work-title">Selected work</h2>
   </div>
   <div class="about-work__grid">
@@ -92,21 +92,21 @@ redirect_from:
 
 <section class="about-section about-questions" aria-labelledby="questions-title">
   <div class="about-section__heading">
-    <p class="about-section__index" aria-hidden="true">03</p>
-    <h2 id="questions-title">Current questions</h2>
+    <p class="about-section__index" aria-hidden="true"></p>
+    <h2 id="questions-title">Current research questions</h2>
   </div>
   <ol class="about-questions__list">
     <li>How do RNA chemical modifications reshape molecular structure and function?</li>
-    <li>Which combinations of sequence, structure, and evolutionary evidence make ncRNA annotation dependable across divergent genomes?</li>
+    <li>How can sequence, structural, and evolutionary evidence be integrated to achieve robust ncRNA annotation across divergent genomes?</li>
     <li>How do microRNA families emerge, change, and disappear across chordate evolution?</li>
   </ol>
 </section>
 
 <aside class="contact-callout" aria-labelledby="about-contact-title">
   <div>
-    <p class="about-section__index" aria-hidden="true">04</p>
+    <p class="about-section__index" aria-hidden="true"></p>
     <h2 id="about-contact-title">Work with me</h2>
-    <p>I welcome academic collaborations on RNA structure, modification, annotation, and evolution, as well as scoped industry projects in RNA analysis, comparative genomics, and reproducible workflows. In your first message, please outline the scientific question, the data available, and the outcome you need.</p>
+    <p>I welcome academic collaborations on RNA structure, modification, annotation, and evolution, as well as scoped industry projects in RNA analysis, comparative genomics, and reproducible workflows. In your first message, please outline the scientific question, the data available, and what you would like to learn or determine from the analysis.</p>
   </div>
   <div class="contact-callout__actions">
     <a class="btn btn--primary" href="mailto:{{ site.author.email }}">Discuss a research collaboration</a>
